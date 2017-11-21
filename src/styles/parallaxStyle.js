@@ -36,7 +36,7 @@ const parallaxStyle = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-end',
         flexDirection: 'column',
-        bottom: 30
+        bottom: 20
     },
 });
 

@@ -40,6 +40,12 @@ class SlideViewComponent extends Component {
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={[part.itemTabInDrawer, part.paddingLeft]}
+                        onPress={() => navigate('Curriculum')}
+                    >
+                        <Text style={part.titleDark}>Giáo trình</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style={[part.itemTabInDrawer, part.paddingLeft]}
                         onPress={() => navigate('BuyBook')}
                     >
                         <Text style={part.titleDark}>Mua sách</Text>

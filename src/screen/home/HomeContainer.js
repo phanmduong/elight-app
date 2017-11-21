@@ -100,7 +100,7 @@ class HomeContainer extends Component {
                 }
                 <View>
                     <Item style={[part.noBorder, {paddingLeft: 15}]}>
-                        <Text style={[part.titleLargeDarkBold, part.paddingLineFar]}>
+                        <Text style={[part.textLogo, part.paddingLineFar]}>
                             eLight
                         </Text>
                         <Right style={part.paddingRight}>
@@ -109,7 +109,7 @@ class HomeContainer extends Component {
                                 onPress={() => navigate('DrawerOpen')}>
                                 <Icon
                                     name="materialCommunity|menu"
-                                    color={color.text}
+                                    color={color.logoColor}
                                     size={size.iconGiant}
                                     style={part.padding}
                                 />

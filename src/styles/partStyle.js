@@ -29,7 +29,8 @@ const part = StyleSheet.create({
         padding: 0,
         backgroundColor: color.none,
     },
-
+    wrapperCenter: {
+    },
     wrapperBuyNowButton: {
         width: wid,
         height: 60,
@@ -39,7 +40,14 @@ const part = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: color.none,
     },
-
+    wrapperButtonPlay:{
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 50,
+        width: 50,
+        borderRadius: 25,
+        backgroundColor: color.logoColor
+    },
 
     wrapperImageInGetFull: {
         position: 'relative',
@@ -194,6 +202,11 @@ const part = StyleSheet.create({
         height: 70,
         borderRadius: 35,
     },
+    avatarCourse: {
+        width: 50,
+        height: 50,
+        borderRadius: 25,
+    },
     avatarUserTiny: {
         width: 15,
         height: 15,
@@ -215,8 +228,21 @@ const part = StyleSheet.create({
         borderRadius: 15,
     },
 
+    imageLesson: {
+        height: wid - 40,
+        width: wid - 40,
+        flex: 1,
+        borderRadius: 15,
+    },
+
 
     titleLargeDarkBold: {
+        fontFamily: (Platform.OS === 'ios') ? 'Montserrat' : 'Montserrat-Bold',
+        fontSize: 25,
+        fontWeight: Platform.OS === 'ios' ? 'bold' : 'normal',
+        color: color.text,
+    },
+    textLogo: {
         fontFamily: (Platform.OS === 'ios') ? 'Lobster' : 'Lobster',
         fontSize: 30,
         fontWeight: Platform.OS === 'ios' ? 'bold' : 'normal',
@@ -274,8 +300,21 @@ const part = StyleSheet.create({
         fontWeight: Platform.OS === 'ios' ? '600' : 'normal',
         marginLeft: -50,
     },
-
-
+    titleDarkBold: {
+        fontFamily: (Platform.OS === 'ios') ? 'Montserrat' : 'Montserrat-Bold',
+        fontSize: size.title,
+        color: color.text,
+        fontWeight: (Platform.OS === 'ios') ? '700' : 'normal',
+    },
+    describeDarkGray: {
+        fontFamily: (Platform.OS === 'ios') ? 'Montserrat' : 'Montserrat-Medium',
+        fontSize: size.describe,
+        color: color.darkGray,
+        fontWeight: (Platform.OS === 'ios') ? '400' : 'normal',
+    },
+    backgroundNone: {
+        backgroundColor: color.none,
+    },
     padding: {
         padding: 10,
     },
@@ -311,8 +350,8 @@ const part = StyleSheet.create({
         paddingBottom: 8,
     },
     paddingLineFar: {
-        paddingTop: 10,
-        paddingBottom: 10,
+        paddingTop: 15,
+        paddingBottom: 15,
     },
     paddingTRB: {
         paddingRight: 5,
@@ -331,6 +370,10 @@ const part = StyleSheet.create({
     paddingLR: {
         paddingLeft: 10,
         paddingRight: 10,
+    },
+    paddingLRWrapper: {
+        paddingLeft: 20,
+        paddingRight: 20,
     },
     noPaddingTop: {
         paddingTop: 0,
@@ -385,7 +428,7 @@ const part = StyleSheet.create({
 
 
     cardHeader: {
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         margin: 0,
         backgroundColor: color.none,
     },
@@ -471,6 +514,16 @@ const part = StyleSheet.create({
         paddingTop: 20,
         paddingBottom: 0,
         textAlign: 'center',
+        fontFamily: (Platform.OS === 'ios') ? 'Montserrat' : 'Montserrat-Medium',
+        fontSize: 16,
+        fontWeight: Platform.OS === 'ios' ? '600' : 'normal',
+        color: color.text,
+
+    },
+
+    textTitleRules: {
+        paddingTop: 20,
+        paddingBottom: 0,
         fontFamily: (Platform.OS === 'ios') ? 'Montserrat' : 'Montserrat-Medium',
         fontSize: 16,
         fontWeight: Platform.OS === 'ios' ? '600' : 'normal',
@@ -608,7 +661,7 @@ const part = StyleSheet.create({
     },
     buttonOrderInModal: {
         borderRadius: 15,
-        padding: 20,
+        padding: 10,
         paddingTop: 5,
         paddingBottom: 5,
         backgroundColor: color.titleBlue,
@@ -638,7 +691,7 @@ const part = StyleSheet.create({
         flex: 1,
     },
     bottomModal: {
-        height: 50,
+        height: 70,
         padding: 10,
         justifyContent: 'center',
         alignItems: 'center',
@@ -686,7 +739,26 @@ const part = StyleSheet.create({
         fontSize: 12,
         fontFamily: (Platform.OS === 'ios') ? 'Montserrat' : 'Montserrat-Medium',
         fontWeight: Platform.OS === 'ios' ? '400' : 'normal',
-    }
+    },
+    // TIME LINE
+    wrapperTimeLine: {
+        width: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    timeLineStraight: {
+        width: 5,
+        height: 70,
+        backgroundColor: color.icon,
+    },
+    timeLineCircle: {
+        width: 14,
+        height: 14,
+        borderRadius: 7,
+        top: 20,
+        position: 'absolute',
+        backgroundColor: color.titleBlue
+    },
 });
 
 

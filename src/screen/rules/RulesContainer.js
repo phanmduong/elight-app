@@ -31,8 +31,6 @@ class RulesContainer extends Component {
         super();
     }
 
-
-
     render() {
         const {goBack} = this.props.navigation;
         return (
@@ -59,7 +57,7 @@ class RulesContainer extends Component {
                 </View>
                 <Content style={[part.padding]}>
                     <View>
-                        <Item style={[part.noBorder, {paddingLeft: 15}]}>
+                        <Item style={[part.noBorder]}>
                             <Text style={[part.titleLargeDarkBold]}>
                                 ĐIỀU KHOẢN SỬ DỤNG
                             </Text>
@@ -72,10 +70,10 @@ class RulesContainer extends Component {
                         Chúng tôi cấp phép sử dụng ứng dụng colorME cho bạn trên cơ sở của EULA này và tuân theo những
                         quy tắc hay chính sách được áp dụng bởi bất kỳ nhà cung cấp cửa hàng ứng dụng nào, chẳng hạn như
                         không giới hạn ở Apple App Store hoặc Google Play Store (Các Quy Định của Bên Thứ Ba). </Text>
-                    <Text style={[part.textTitlePostInPost, part.paddingLine]}>
+                    <Text style={[part.textTitleRules, part.paddingLine]}>
                         CÁC ĐIỀU KHOẢN ĐÃ THỎA THUẬN
                     </Text>
-                    <Text style={[part.textTitlePostInPost, part.paddingLine]}>
+                    <Text style={[part.textTitleRules, part.paddingLine]}>
                         NHỮNG ĐIỀU ĐƯỢC CÔNG NHẬN
                     </Text>
                     <Text style={[part.textTitleAuthor, part.paddingLine]}>
@@ -110,7 +108,7 @@ class RulesContainer extends Component {
                         tương tự nào đều được hiểu là để minh họa và sẽ không giới hạn tính tổng quát của những từ chung
                         có liên quan.
                     </Text>
-                    <Text style={[part.textTitlePostInPost, part.paddingLine]}>
+                    <Text style={[part.textTitleRules, part.paddingLine]}>
                         CẤP PHÉP VÀ PHẠM VI CỦA GIẤY PHÉP
                     </Text>
                     <Text style={[part.textTitleAuthor, part.paddingLine]}>
@@ -132,7 +130,7 @@ class RulesContainer extends Component {
                         được
                         gửi đến các bên khác để xử lý nhằm nâng cao chức năng của ứng dụng colorME.
                     </Text>
-                    <Text style={[part.textTitlePostInPost, part.paddingLine]}>
+                    <Text style={[part.textTitleRules, part.paddingLine]}>
                         CÁC QUY ĐỊNH HẠN CHẾ CỦA GIẤY PHÉP
                     </Text>
                     <Text style={[part.textTitleAuthor, part.paddingLine]}>
@@ -168,7 +166,7 @@ class RulesContainer extends Component {
                         Không được sử dụng để tạo ra bất kỳ ứng dụng colorME nào tương tự về căn bản với ứng dụng
                         colorME này.
                     </Text>
-                    <Text style={[part.textTitlePostInPost, part.paddingLine]}>
+                    <Text style={[part.textTitleRules, part.paddingLine]}>
                         CÁC QUY ĐỊNH HẠN CHẾ VỀ SỬ DỤNG ĐƯỢC CHẤP NHÂṆ
                     </Text>
                     <Text style={[part.textTitleAuthor, part.paddingLine]}>
@@ -197,7 +195,7 @@ class RulesContainer extends Component {
                     <Text style={[part.textTitleAuthor, part.paddingLine]}>
                         Không được đăng các hình ảnh thuộc sở hữu trí tuệ trong ứng dụng colorME.
                     </Text>
-                    <Text style={[part.textTitlePostInPost, part.paddingLine]}>
+                    <Text style={[part.textTitleRules, part.paddingLine]}>
                         QUYỀN SỞ HỮU TRÍ TUỆ
                     </Text>
                     <Text style={[part.textTitleAuthor, part.paddingLine]}>
@@ -214,7 +212,7 @@ class RulesContainer extends Component {
                         Bạn sẽ không phủ nhận tính hợp lệ của bất kỳ quyền sở hữu trí tuệ nào của chúng tôi được cấp
                         phép theo EULA này, hay phản đối bất kỳ đơn đăng ký quyền sở hữu trí tuệ nào như vậy.
                     </Text>
-                    <Text style={[part.textTitlePostInPost, part.paddingLine]}>
+                    <Text style={[part.textTitleRules, part.paddingLine]}>
                         GIỚI HẠN TRÁCH NHIỆM VÀ BỒI THƯỜNG
                     </Text>
                     <Text style={[part.textTitleAuthor, part.paddingLine]}>
@@ -297,7 +295,7 @@ class RulesContainer extends Component {
                         hoặc sửa đổi bất kỳ điều kiện, bảo hành hoặc nghĩa vụ nào khác như vậy thì đều là trái pháp
                         luật.
                     </Text>
-                    <Text style={[part.textTitlePostInPost, part.paddingLine]}>
+                    <Text style={[part.textTitleRules, part.paddingLine]}>
                         CHẤM DỨT
                     </Text>
                     <Text style={[part.textTitleAuthor, part.paddingLine]}>
@@ -337,7 +335,7 @@ class RulesContainer extends Component {
                         nhƣ̃ng muc̣ đó , có thể vẫn còn duy trì hiêụ lưc̣ khi hết thời hạn hay chấm dƣ́ t EULA này,
                         chẳng hạn như, nhưng không giới hạn ở mục 1, 5, 6, 10 và mục này.
                     </Text>
-                    <Text style={[part.textTitlePostInPost, part.paddingLine]}>
+                    <Text style={[part.textTitleRules, part.paddingLine]}>
                         THÔNG TIN LIÊN LẠC GIỮA BẠN VÀ CHÚNG TÔI
                     </Text>
                     <Text style={[part.textTitleAuthor, part.paddingLine]}>
@@ -347,7 +345,7 @@ class RulesContainer extends Component {
                         điạ chỉ email: colorme.dev@gmail.com Chúng tôi sẽ xác nhận việc nhận được thông báo này bằng
                         cách liên lạc với bạn bằng văn bản, thường là qua email.
                     </Text>
-                    <Text style={[part.textTitlePostInPost, part.paddingLine]}>
+                    <Text style={[part.textTitleRules, part.paddingLine]}>
                         CÁC TRƯỜNG HỢP NGOÀI TẦM KIỂM SOÁT CỦA CHÚNG TÔI
                     </Text>
                     <Text style={[part.textTitleAuthor, part.paddingLine]}>
@@ -369,7 +367,7 @@ class RulesContainer extends Component {
                         Chúng tôi sẽ nỗ lực hết sức để tìm một giải pháp để có thể thực hiện các nghĩa vụ của chúng tôi
                         theo EULA này bất chấp sự kiện Sự Kiện Ngoài Tầm Kiểm Soát của Chúng Tôi.
                     </Text>
-                    <Text style={[part.textTitlePostInPost, part.paddingLine]}>
+                    <Text style={[part.textTitleRules, part.paddingLine]}>
                         CÁC ĐIỀU KHOẢN QUAN TRỌNG KHÁC
                     </Text>
                     <Text style={[part.textTitleAuthor, part.paddingLine]}>

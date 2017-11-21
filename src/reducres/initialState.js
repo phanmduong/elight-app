@@ -18,5 +18,12 @@ export default {
     detailBook : {
         detailBook : {},
         isLoadingBook : false,
+    },
+    curriculum: {
+        isLoadingCurriculum: false,
+        isLoadingCourse: false,
+        data:{},
+        resources: [],
+        courses: [],
     }
 }

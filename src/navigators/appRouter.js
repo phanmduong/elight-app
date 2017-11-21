@@ -9,6 +9,9 @@ import RulesContainer from '../screen/rules/RulesContainer';
 import BackPostContainer from '../screen/blog/BackPostContainer'
 import BuyBookContainer from "../screen/buyBook/BuyBookContainer";
 import DetailBookContainer from '../screen/detailBook/DetailBookContainer';
+import CurriculumContainer from '../screen/curriculum/CurriculumContainer';
+import CurriculumInformationContainer from '../screen/curriculum/CurriculumInformationContainer';
+import CurriculumListContainer from '../screen/curriculum/CurriculumListContainer';
 const StackNavigatorStyle = {
     navigationOptions: {
         header: null,
@@ -43,6 +46,9 @@ export const Main = StackNavigator(
         Drawer: {screen: Drawer},
         BuyBook: {screen: BuyBook},
         Rules: {screen: RulesContainer},
+        Curriculum: {screen: CurriculumContainer},
+        CurriculumList: {screen: CurriculumListContainer},
+        CurriculumInformation: {screen: CurriculumInformationContainer},
     },
     {headerMode: 'none'}
 );
