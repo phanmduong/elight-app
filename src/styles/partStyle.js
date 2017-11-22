@@ -711,6 +711,7 @@ const part = StyleSheet.create({
         bottom: 0,
     },
     bottomModalInLesson: {
+        backgroundColor: color.backGround,
         height: 110,
         padding: 10,
         alignItems: 'center',
