@@ -202,9 +202,8 @@ const part = StyleSheet.create({
         borderRadius: 35,
     },
     avatarCourse: {
-        width: 50,
-        height: 50,
-        borderRadius: 25,
+        width: 60,
+        height: 80,
     },
     avatarUserTiny: {
         width: 15,
