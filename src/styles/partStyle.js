@@ -29,8 +29,7 @@ const part = StyleSheet.create({
         padding: 0,
         backgroundColor: color.none,
     },
-    wrapperCenter: {
-    },
+    wrapperCenter: {},
     wrapperBuyNowButton: {
         width: wid,
         height: 60,
@@ -40,7 +39,7 @@ const part = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: color.none,
     },
-    wrapperButtonPlay:{
+    wrapperButtonPlay: {
         justifyContent: 'center',
         alignItems: 'center',
         height: 50,
@@ -345,6 +344,10 @@ const part = StyleSheet.create({
         paddingTop: 3,
         paddingBottom: 3,
     },
+    paddingLine10: {
+        paddingTop: 10,
+        paddingBottom: 10,
+    },
     paddingLine8: {
         paddingTop: 8,
         paddingBottom: 8,
@@ -429,6 +432,11 @@ const part = StyleSheet.create({
 
     cardHeader: {
         justifyContent: 'flex-start',
+        margin: 0,
+        backgroundColor: color.none,
+    },
+    cardHeader2: {
+        justifyContent: 'center',
         margin: 0,
         backgroundColor: color.none,
     },
@@ -691,9 +699,8 @@ const part = StyleSheet.create({
         flex: 1,
     },
     bottomModal: {
-        height: 70,
+        height: 110,
         padding: 10,
-        justifyContent: 'center',
         alignItems: 'center',
         bottom: 0,
     },
@@ -758,6 +765,22 @@ const part = StyleSheet.create({
         top: 20,
         position: 'absolute',
         backgroundColor: color.titleBlue
+    },
+
+
+    // PLAY PROGRESS
+    wrapperDeadline: {
+        marginLeft: 3,
+        width: wid - 20,
+        height: 5,
+        borderRadius: 5,
+        backgroundColor: color.lightGray,
+    },
+
+    deadlineProgress: {
+        height: 5,
+        borderRadius: 5,
+        backgroundColor: color.logoColor,
     },
 });
 

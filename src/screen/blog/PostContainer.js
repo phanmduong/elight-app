@@ -85,7 +85,7 @@ class PostContainer extends Component {
                             renderForeground={() => (
                                 <View key="parallax-header" style={[parallaxStyle.parallaxHeaderTitle]}>
                                     <View>
-                                        <CardItem style={[part.cardHeader, part.noPaddingTopBottom]}>
+                                        <CardItem style={[part.cardHeader2, part.noPaddingTopBottom]}>
                                             <Item style={[part.noBorder, {justifyContent: 'center'}]}>
                                                 <Text style={part.textTitlePostInPost} numberOfLines={2}>
                                                     {data.title}
@@ -93,7 +93,7 @@ class PostContainer extends Component {
                                             </Item>
                                         </CardItem>
 
-                                        <CardItem style={[part.cardHeader, part.noPaddingBottom]}>
+                                        <CardItem style={[part.cardHeader2, part.noPaddingBottom]}>
                                             <Item style={[part.noBorder]}>
                                                 {
                                                     data.author
@@ -109,7 +109,7 @@ class PostContainer extends Component {
 
                                             </Item>
                                         </CardItem>
-                                        <CardItem style={[part.cardHeader, part.noPaddingBottom]}>
+                                        <CardItem style={[part.cardHeader2, part.noPaddingBottom]}>
                                             <Item style={[part.noBorder]}>
                                                 <Text style={part.textTitleAuthor} numberOfLines={1}>
                                                     Đăng bởi <Text style={part.textTitleAuthorBlue}>
@@ -118,14 +118,14 @@ class PostContainer extends Component {
                                                 </Text>
                                             </Item>
                                         </CardItem>
-                                        <CardItem style={[part.cardHeader, part.noPaddingBottom]}>
+                                        <CardItem style={[part.cardHeader2, part.noPaddingBottom]}>
                                             <Item style={[part.noBorder]}>
                                                 <Text style={part.textTime} numberOfLines={1}>
                                                     {data.created_at}
                                                 </Text>
                                             </Item>
                                         </CardItem>
-                                        <CardItem style={[part.cardHeader, part.noPaddingBottom]}>
+                                        <CardItem style={[part.cardHeader2, part.noPaddingBottom]}>
                                             <View style={[part.noBorder, part.wrapperTextCategory]}>
                                                 <Text style={part.textCategory} numberOfLines={1}>
                                                     {data.category ? data.category.toUpperCase() : 'BLOG'}
