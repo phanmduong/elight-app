@@ -263,41 +263,6 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
-		A71F87CD1FC5149400A2F640 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1F18BE553F904D7CBFC85473 /* ReactNativeAudioStreaming.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 134814201AA4EA6300B7C361;
-			remoteInfo = ReactNativeAudioStreaming;
-		};
-		A71F87D61FC5153C00A2F640 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A71F87D11FC5153C00A2F640 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3D796608261BE7EF75B9CA099BE45490;
-			remoteInfo = "Pods-ReactNativeAudioStreaming";
-		};
-		A71F87D81FC5153C00A2F640 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A71F87D11FC5153C00A2F640 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8354B6B10F10687EE626DF43663B075A;
-			remoteInfo = StreamingKit;
-		};
-		A7308EDB1FC4431600E09691 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AD9B09C43BE840C0A9A5CD3B /* MusicControl.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 134814201AA4EA6300B7C361;
-			remoteInfo = MusicControl;
-		};
-		A7308EDD1FC4431600E09691 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AD9B09C43BE840C0A9A5CD3B /* MusicControl.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A3FC285E1EA7A8350097B6A9;
-			remoteInfo = "MusicControl-tvOS";
-		};
 		A7308EF21FC4431600E09691 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0A7171FD315241CEAE98A0FB /* RCTVideo.xcodeproj */;
@@ -354,13 +319,6 @@
 			remoteGlobalIDString = 9936F32F1F5F2E5B0010BF04;
 			remoteInfo = "privatedata-tvOS";
 		};
-		A7308F5D1FC444A800E09691 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C2D9D5FF715F44E0B1612421 /* RNSound.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 19825A1E1BD4A89800EE0337;
-			remoteInfo = RNSound;
-		};
 		A799B9F01FC3CAA500BA7FAE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */;
@@ -400,7 +358,6 @@
 
 /* Begin PBXFileReference section */
 		004464F0DCDB414B87033041 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
-		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTActionSheet.xcodeproj; path = "../node_modules/react-native/Libraries/ActionSheetIOS/RCTActionSheet.xcodeproj"; sourceTree = "<group>"; };
 		00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTGeolocation.xcodeproj; path = "../node_modules/react-native/Libraries/Geolocation/RCTGeolocation.xcodeproj"; sourceTree = "<group>"; };
 		00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTImage.xcodeproj; path = "../node_modules/react-native/Libraries/Image/RCTImage.xcodeproj"; sourceTree = "<group>"; };
@@ -427,7 +384,6 @@
 		18B4212096D1499BB3FE2437 /* Montserrat-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-ExtraBoldItalic.ttf"; path = "../assets/fonts/Montserrat-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		1A7A131533FB4715963D50A9 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/native-base/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		1BE1B0E89E2547F9814F208F /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Regular.ttf"; path = "../assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
-		1F18BE553F904D7CBFC85473 /* ReactNativeAudioStreaming.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeAudioStreaming.xcodeproj; path = "../node_modules/react-native-audio-streaming/ios/ReactNativeAudioStreaming.xcodeproj"; sourceTree = "<group>"; };
 		23207CB38F1E48D7A703B5E4 /* Montserrat-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Black.ttf"; path = "../assets/fonts/Montserrat-Black.ttf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* elight-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "elight-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* elight-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "elight-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -455,13 +411,10 @@
 		98E95AEAD7D84B85999C96D4 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		9DD0CEC8341344318C4557B3 /* libRCTVideo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTVideo.a; sourceTree = "<group>"; };
 		A07F9DF8F811433DBF172518 /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-SemiBoldItalic.ttf"; path = "../assets/fonts/Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
-		A71F87D11FC5153C00A2F640 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = "../node_modules/react-native-audio-streaming/ios/Pods/Pods.xcodeproj"; sourceTree = "<group>"; };
 		AC470DE423774C0BA255EBE7 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/native-base/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		AD25859136074F6BB88BCD7F /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-SemiBold.ttf"; path = "../assets/fonts/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
-		AD9B09C43BE840C0A9A5CD3B /* MusicControl.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = MusicControl.xcodeproj; path = "../node_modules/react-native-music-control/ios/MusicControl.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		B8AB97464DED4AD9825EEA5C /* Lobster-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lobster-Regular.ttf"; path = "../assets/fonts/Lobster-Regular.ttf"; sourceTree = "<group>"; };
-		C2D9D5FF715F44E0B1612421 /* RNSound.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSound.xcodeproj; path = "../node_modules/react-native-sound/RNSound.xcodeproj"; sourceTree = "<group>"; };
 		CA91F65046124A189CF0D57E /* libReactNativeAudioStreaming.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libReactNativeAudioStreaming.a; sourceTree = "<group>"; };
 		DFBB8A3B65C048E4A8D6F2AE /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-LightItalic.ttf"; path = "../assets/fonts/Montserrat-LightItalic.ttf"; sourceTree = "<group>"; };
 		F43624280A9145A0AAF5A037 /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-ExtraLight.ttf"; path = "../assets/fonts/Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -607,7 +560,6 @@
 		13B07FAE1A68108700A75B9A /* elight */ = {
 			isa = PBXGroup;
 			children = (
-				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -672,7 +624,6 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				A71F87D11FC5153C00A2F640 /* Pods.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -686,10 +637,7 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				4FD53E83BA3C40BFA49D5D7A /* RNVectorIcons.xcodeproj */,
-				AD9B09C43BE840C0A9A5CD3B /* MusicControl.xcodeproj */,
 				0A7171FD315241CEAE98A0FB /* RCTVideo.xcodeproj */,
-				C2D9D5FF715F44E0B1612421 /* RNSound.xcodeproj */,
-				1F18BE553F904D7CBFC85473 /* ReactNativeAudioStreaming.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -729,45 +677,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A71F87A31FC5149400A2F640 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A71F87CE1FC5149400A2F640 /* libReactNativeAudioStreaming.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A71F87D21FC5153C00A2F640 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A71F87D71FC5153C00A2F640 /* libPods-ReactNativeAudioStreaming.a */,
-				A71F87D91FC5153C00A2F640 /* libStreamingKit.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A7308ED51FC4431500E09691 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A7308EDC1FC4431600E09691 /* libMusicControl.a */,
-				A7308EDE1FC4431600E09691 /* libMusicControl-tvOS.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		A7308ED71FC4431600E09691 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				A7308EF31FC4431600E09691 /* libRCTVideo.a */,
 				A7308EF51FC4431600E09691 /* libRCTVideo.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A7308F331FC444A800E09691 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A7308F5E1FC444A800E09691 /* libRNSound.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -949,14 +863,6 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = A7308ED51FC4431500E09691 /* Products */;
-					ProjectRef = AD9B09C43BE840C0A9A5CD3B /* MusicControl.xcodeproj */;
-				},
-				{
-					ProductGroup = A71F87D21FC5153C00A2F640 /* Products */;
-					ProjectRef = A71F87D11FC5153C00A2F640 /* Pods.xcodeproj */;
-				},
-				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
 				},
@@ -1007,14 +913,6 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
-				},
-				{
-					ProductGroup = A71F87A31FC5149400A2F640 /* Products */;
-					ProjectRef = 1F18BE553F904D7CBFC85473 /* ReactNativeAudioStreaming.xcodeproj */;
-				},
-				{
-					ProductGroup = A7308F331FC444A800E09691 /* Products */;
-					ProjectRef = C2D9D5FF715F44E0B1612421 /* RNSound.xcodeproj */;
 				},
 				{
 					ProductGroup = A799B9E91FC3CAA500BA7FAE /* Products */;
@@ -1207,41 +1105,6 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		A71F87CE1FC5149400A2F640 /* libReactNativeAudioStreaming.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libReactNativeAudioStreaming.a;
-			remoteRef = A71F87CD1FC5149400A2F640 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A71F87D71FC5153C00A2F640 /* libPods-ReactNativeAudioStreaming.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libPods-ReactNativeAudioStreaming.a";
-			remoteRef = A71F87D61FC5153C00A2F640 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A71F87D91FC5153C00A2F640 /* libStreamingKit.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libStreamingKit.a;
-			remoteRef = A71F87D81FC5153C00A2F640 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A7308EDC1FC4431600E09691 /* libMusicControl.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libMusicControl.a;
-			remoteRef = A7308EDB1FC4431600E09691 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A7308EDE1FC4431600E09691 /* libMusicControl-tvOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libMusicControl-tvOS.a";
-			remoteRef = A7308EDD1FC4431600E09691 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		A7308EF31FC4431600E09691 /* libRCTVideo.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1296,13 +1159,6 @@
 			fileType = archive.ar;
 			path = "libprivatedata-tvOS.a";
 			remoteRef = A7308F121FC4431600E09691 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A7308F5E1FC444A800E09691 /* libRNSound.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNSound.a;
-			remoteRef = A7308F5D1FC444A800E09691 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		A799B9F11FC3CAA500BA7FAE /* libRCTBlob-tvOS.a */ = {

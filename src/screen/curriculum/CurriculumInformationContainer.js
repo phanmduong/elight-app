@@ -23,7 +23,7 @@ class CurriculumInformationContainer extends Component {
         super();
         this.state = {
             play: 1,
-            paused: false,
+            paused: true,
             duration: 0.0,
             currentTime: 0.0,
             minute: 0,
@@ -81,7 +81,11 @@ class CurriculumInformationContainer extends Component {
     }
 
     onEnd(){
-        alert("AASF");
+        this.setState({
+            minute: 0,
+            second: 0,
+            paused: true
+        })
     }
 
     render() {
@@ -243,7 +247,7 @@ class CurriculumInformationContainer extends Component {
                                     volume={1}                            // 0 is muted, 1 is normal.
                                     muted={false}                           // Mutes the audio entirely.
                                     paused={paused}                          // Pauses playback entirely.
-                                    repeat={false}                           // Repeat forever.
+                                    repeat={true}                           // Repeat forever.
                                     playInBackground={false}                // Audio continues to play when app entering background.
                                     playWhenInactive={false}                // [iOS] Video continues to play when control or notification center are shown.
                                     ignoreSilentSwitch={"ignore"}           // [iOS] ignore | obey - When 'ignore', audio will still play with the iOS hard silent switch set to silent. When 'obey', audio will toggle with the switch. When not specified, will inherit audio settings as usual.
