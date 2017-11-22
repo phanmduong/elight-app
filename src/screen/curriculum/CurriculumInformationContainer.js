@@ -84,7 +84,7 @@ class CurriculumInformationContainer extends Component {
         let {play, paused} = this.state;
         const {goBack} = this.props.navigation;
         const {isLoadingCurriculum, data} = this.props;
-        let temp = this.state.currentTime == 0 || this.state.duration == 0 || (this.state.minute == this.state.minuteDuration && this.state.second == this.state.secondDuration)? 0 : this.state.currentTime / this.state.duration;
+        let temp = this.state.currentTime == 0 || this.state.duration == 0 ? 0 : this.state.currentTime / this.state.duration;
         let widthDeadlineProgress = (size.wid - 20) * temp;
         let url = 'https://cf-hls-media.sndcdn.com/media/478562/638221/iqp84Dd7m5ro.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLWhscy1tZWRpYS5zbmRjZG4uY29tL21lZGlhLyovKi9pcXA4NERkN201cm8uMTI4Lm1wMyIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTUxMTMyNzQzOH19fV19&Signature=oDCtAp4E5DiRVc2-t4rCMrBtp-XgT-sA8l13TV5Q6P9myzau--4LLQPff8G7r4BW6c8nV6HlrHN7NwzD-aNs4dYQhU~IUAD-1UBxWnBjl~JZnsMaHc-s3p5M5qCpk6EnwiysiYBtedS36lb7G5zBdM8ibfFXZMVsfZXmlQGLUiIsSXkBiDYlh-k5Kszssnidi37LqfUw5~~2TlOfEcy2t6EEiWRyyhio7GK8y-OTuvPcQfswRm9vhvjgGOtFp65oe-AQqDEve8GBIyVtyBX1JGJ828zCmJsQ4D~XhsVtbCBF5tV0NVJrlOpvRSQWoXyfVN8pQjnbTAEt1PJf5ToLsA__&Key-Pair-Id=APKAJAGZ7VMH2PFPW6UQ'
         return (
@@ -187,7 +187,7 @@ class CurriculumInformationContainer extends Component {
                                 }
                             >
                                 <Image
-                                    source={{uri: 'https://www.w3schools.com/w3css/img_fjords.jpg'}}
+                                    source={{uri: data.audio_url }}
                                     style={part.imageLesson}
                                 />
                             </View>
@@ -229,7 +229,7 @@ class CurriculumInformationContainer extends Component {
                             </Text>
                         </View>
                         <Video
-                            source={{uri: url}}   // Can be a URL or a local file.
+                            source={{uri: data.audio_url}}   // Can be a URL or a local file.
                             ref={(ref) => {
                                 this.player = ref
                             }}                                      // Store reference
