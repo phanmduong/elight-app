@@ -15,23 +15,22 @@ import * as color from '../../styles/color'
 import parallaxStyle from '../../styles/parallaxStyle';
 import * as size from '../../styles/size';
 import * as curriculumAction from './curriculumAction';
-import WebViewAutoHeight from '../../commons/WebViewAutoHeight';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import Video from 'react-native-video';
-import {wid} from "../../styles/size";
 
 class CurriculumInformationContainer extends Component {
     constructor() {
         super();
         this.state = {
             play: 1,
-            paused: true,
+            paused: false,
             duration: 0.0,
             currentTime: 0.0,
             minute: 0,
             second: 0,
             minuteDuration: 0,
             secondDuration: 0,
+            temp: 0,
         };
         this.onLoad = this.onLoad.bind(this);
         this.onProgress = this.onProgress.bind(this);
@@ -66,13 +65,18 @@ class CurriculumInformationContainer extends Component {
     onProgress(data) {
         this.setState({currentTime: data.currentTime});
         let second = parseInt(this.state.currentTime);
-        if (1) {
+        if (data.currentTime <= data.currentTime) {
             this.setState({
                 minute: parseInt(second / 60),
                 second: parseInt(second % 60),
             })
+        } else {
+            this.setState({
+                minute: 0,
+                second: 0,
+                paused: true
+            })
         }
-        console.log(this.state.currentTime)
     }
 
     render() {
@@ -80,9 +84,9 @@ class CurriculumInformationContainer extends Component {
         let {play, paused} = this.state;
         const {goBack} = this.props.navigation;
         const {isLoadingCurriculum, data} = this.props;
-        let widthDeadlineProgress = (size.wid - 20) * this.state.currentTime / this.state.duration;
-        let url = 'https://api.soundcloud.com/tracks/332117176/stream?client_id=3YnCkFCcm5cBfYqlXr3ufGY7k2izG1lv';
-
+        let temp = this.state.currentTime == 0 || this.state.duration == 0 || (this.state.minute == this.state.minuteDuration && this.state.second == this.state.secondDuration)? 0 : this.state.currentTime / this.state.duration;
+        let widthDeadlineProgress = (size.wid - 20) * temp;
+        let url = 'https://cf-hls-media.sndcdn.com/media/478562/638221/iqp84Dd7m5ro.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLWhscy1tZWRpYS5zbmRjZG4uY29tL21lZGlhLyovKi9pcXA4NERkN201cm8uMTI4Lm1wMyIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTUxMTMyNzQzOH19fV19&Signature=oDCtAp4E5DiRVc2-t4rCMrBtp-XgT-sA8l13TV5Q6P9myzau--4LLQPff8G7r4BW6c8nV6HlrHN7NwzD-aNs4dYQhU~IUAD-1UBxWnBjl~JZnsMaHc-s3p5M5qCpk6EnwiysiYBtedS36lb7G5zBdM8ibfFXZMVsfZXmlQGLUiIsSXkBiDYlh-k5Kszssnidi37LqfUw5~~2TlOfEcy2t6EEiWRyyhio7GK8y-OTuvPcQfswRm9vhvjgGOtFp65oe-AQqDEve8GBIyVtyBX1JGJ828zCmJsQ4D~XhsVtbCBF5tV0NVJrlOpvRSQWoXyfVN8pQjnbTAEt1PJf5ToLsA__&Key-Pair-Id=APKAJAGZ7VMH2PFPW6UQ'
         return (
             <Container style={part.wrapperContainer}>
                 <StatusBar
@@ -195,6 +199,7 @@ class CurriculumInformationContainer extends Component {
                 <View style={[part.bottomModal, part.haveBorderTop]}>
                     <View style={{flexDirection: 'row'}}>
                         <TouchableOpacity
+                            activeOpacity={1}
                             style={[part.padding, part.wrapperButtonPlay]}
                             onPress={() => this.playSound()}
                         >
@@ -238,7 +243,7 @@ class CurriculumInformationContainer extends Component {
                             ignoreSilentSwitch={"ignore"}           // [iOS] ignore | obey - When 'ignore', audio will still play with the iOS hard silent switch set to silent. When 'obey', audio will toggle with the switch. When not specified, will inherit audio settings as usual.
                             progressUpdateInterval={250.0}          // [iOS] Interval to fire onProgress (default to ~250ms)
                             onLoad={this.onLoad}    // Callback when video loads
-                            onProgress={this.onProgress}    // Callback every ~250ms with currentTime
+                            onProgress={this.onProgress }    // Callback every ~250ms with currentTime
                         />
                     </View>
                     <View style={{paddingTop: 10}}>
