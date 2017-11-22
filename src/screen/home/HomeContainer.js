@@ -173,12 +173,19 @@ class HomeContainer extends Component {
                                                             source={{uri: `http://${item.url}`}}
                                                             style={part.imagePost}
                                                         />
+                                                        {
+                                                            item.category
+                                                                ?
+                                                                <View style={[part.noBorder, part.wrapperTextCategoryInImage]}>
+                                                                    <Text style={part.textCategoryInImage} numberOfLines={1}>
+                                                                        {item.category ? item.category.toUpperCase() : 'BLOG'}
+                                                                    </Text>
+                                                                </View>
+                                                                :
+                                                                <View/>
 
-                                                        <View style={[part.noBorder, part.wrapperTextCategoryInImage]}>
-                                                            <Text style={part.textCategoryInImage} numberOfLines={1}>
-                                                                {item.category ? item.category.toUpperCase() : 'BLOG'}
-                                                            </Text>
-                                                        </View>
+                                                        }
+
                                                     </View>
                                                 </TouchableOpacity>
                                                 <View style={part.wrapperTextPost}>
