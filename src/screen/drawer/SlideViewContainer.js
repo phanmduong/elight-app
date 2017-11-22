@@ -62,11 +62,6 @@ class SlideViewComponent extends Component {
                     >
                         <Text style={part.titleDark}>Điều khoản</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity
-                        style={[part.itemTabInDrawer, part.paddingLeft]}
-                    >
-                        <Text style={part.titleDark}>Đơn hàng</Text>
-                    </TouchableOpacity>
                 </View>
             </Container>
         );

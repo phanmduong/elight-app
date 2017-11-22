@@ -106,7 +106,7 @@ class CurriculumInformationContainer extends Component {
             <Container style={part.wrapperContainer}>
                 <StatusBar
                     backgroundColor={color.bgModal}
-                    barStyle={Platform.OS === 'ios' ? "light-content" : "light-content"}
+                    barStyle={Platform.OS === 'ios' ? "dark-content" : "light-content"}
                 />
                 <ParallaxScrollView
                     backgroundColor={color.backGround}

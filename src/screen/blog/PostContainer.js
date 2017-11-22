@@ -4,7 +4,7 @@ import {
     Platform,
     Text,
     TouchableOpacity,
-    View, FlatList,
+    View, FlatList, StatusBar
 } from 'react-native';
 import {
     List,
@@ -62,6 +62,10 @@ class PostContainer extends Component {
 
         return (
             <Container ref="page" style={part.wrapperContainer}>
+                <StatusBar
+                    backgroundColor={color.bgModal}
+                    barStyle={Platform.OS === 'ios' ? "dark-content" : "light-content"}
+                />
                 {
                     isLoading
                         ?

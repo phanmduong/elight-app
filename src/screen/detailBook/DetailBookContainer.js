@@ -19,6 +19,9 @@ import BackButton from '../../commons/BackButton';
 import * as detailBookAction from '../detailBook/detailBookAction';
 import * as bookAction from '../buyBook/buyBookAction';
 import {connect} from 'react-redux';
+import ParallaxScrollView from 'react-native-parallax-scroll-view';
+import parallaxStyle from '../../styles/parallaxStyle';
+
 import {bindActionCreators} from 'redux';
 import {
     Body,
@@ -211,164 +214,194 @@ class DetailBookContainer extends Component {
                     backgroundColor={color.bgModal}
                     barStyle={Platform.OS === 'ios' ? "dark-content" : "light-content"}
                 />
-                {
-                    Platform.OS === 'ios'
-                        ?
-                        <View style={part.wrapperStatusBarNoPadding}>
+                <ParallaxScrollView
+                    backgroundColor={color.backGround}
+                    showsVerticalScrollIndicator={false}
+                    headerBackgroundColor={color.backGround}
+                    stickyHeaderHeight={size.STICKY_HEADER_HEIGHT}
+                    parallaxHeaderHeight={120}
+                    backgroundSpeed={10}
+                    renderBackground={() => (
+                        <View style={part.wrapperImageInGetFull}>
+                            <View key="background">
+                            </View>
                         </View>
-                        :
-                        <View/>
-                }
+                    )}
+                    renderForeground={() => (
+                        <View key="parallax-header" style={[parallaxStyle.parallaxHeaderTitle]}>
+                            <View>
+                                <Item style={[part.noBorder, {paddingLeft: 15}]}>
+                                    <Text style={[part.titleLargeDarkBold]}>
+                                        {
+                                            isLoadingBook
+                                                ?
+                                                'TÊN SÁCH'
+                                                :
+                                                detailBook.name
+                                        }
+                                    </Text>
+                                </Item>
+                            </View>
+                        </View>
+                    )}
+                    renderStickyHeader={() => (
+                        <View key="sticky-header" style={parallaxStyle.stickySection}>
+                            <View style={part.iconInDrawerNav}>
+                                <Left style={Platform.OS === 'ios' ? {marginTop: 20} : ''}>
+                                    <Body style={{padding: 30}}>
+                                    <Text style={[part.titleSmallDarkBold, {fontSize: 15}]} numberOfLines={1}>
+                                        {
+                                            isLoadingBook
+                                                ?
+                                                'TÊN SÁCH'
+                                                :
+                                                detailBook.name
+                                        }
+                                    </Text>
+                                    </Body>
+                                </Left>
+                            </View>
+                        </View>
+                    )}
+                    renderFixedHeader={() => (
+                        <View key="fixed-header" style={part.iconInDrawerNav}>
+                            <Left style={Platform.OS === 'ios' ? {marginTop: 20} : ''}>
+                                <BackButton goBack={goBack}/>
+                            </Left>
+                        </View>
+                    )}
+                >
 
-                <View>
-                    <Item style={[part.noBorder]}>
-                        <Left>
-                            <BackButton goBack={goBack}/>
-                        </Left>
-                    </Item>
-                </View>
-                <Content>
                     <View>
-                        <Item style={[part.noBorder, {paddingLeft: 15}]}>
-                            <Text style={[part.titleLargeDarkBold]}>
-                                {
-                                    isLoadingBook
-                                        ?
-                                        'TÊN SÁCH'
-                                        :
-                                        detailBook.name
-                                }
-                            </Text>
-                        </Item>
+                        {
+                            isLoadingBook
+                                ?
+                                <View style={[part.wrapperContainer, {height: 80}]}>
+                                    <Spinner color={color.gray}/>
+                                </View>
+                                :
+                                <View style={{alignItems: 'center'}}>
+                                    <Image
+                                        resizeMode={'cover'}
+                                        style={[part.contentImage]}
+                                        source={{uri: detailBook.cover ? detailBook.cover : ''}}
+                                    />
+                                    <Image
+                                        resizeMode={'cover'}
+                                        style={[part.imageInItemBookDetail]}
+                                        source={{uri: detailBook.avatar ? detailBook.avatar : ''}}
+                                    />
+                                    <View style={[{marginTop: 130, flex: 1}, part.marginContent]}>
+                                        <Text style={part.textTitleContent}>
+                                            {detailBook.title1}
+                                        </Text>
+                                        <View style={part.lineTitle}></View>
+                                        <Text
+                                            style={part.textDescription}>
+                                            {detailBook.content1}
+                                        </Text>
+                                        <View style={{alignItems: 'center', flex: 1, justifyContent: 'flex-end'}}>
+                                            <Image
+                                                resizeMode={'cover'}
+                                                style={part.imageTitle1}
+                                                source={{uri: detailBook.img_url1 ? detailBook.img_url1 : ''}}
+                                            />
+                                        </View>
+                                    </View>
+
+                                    <View style={part.marginContent}>
+                                        <Text style={part.textTitleContent}>
+                                            {detailBook.title2}
+                                        </Text>
+                                        <View style={part.lineTitle}></View>
+                                        <Text style={part.textDescription}>
+                                            {detailBook.content2}
+                                        </Text>
+                                    </View>
+                                    <View>
+                                        <View style={part.marginContent}>
+                                            <Text style={[part.textCounter, {color: detailBook.main_color}]}>
+                                                {detailBook.counter1}
+                                            </Text>
+                                            <Text
+                                                style={[part.textDescription]}>
+                                                {detailBook.counter1_content}
+                                            </Text>
+                                        </View>
+                                        <View style={part.marginContent}>
+                                            <Text style={[part.textCounter, {color: detailBook.main_color}]}>
+                                                {detailBook.counter2}
+                                            </Text>
+                                            <Text
+                                                style={[part.textDescription]}>
+                                                {detailBook.counter2_content}
+                                            </Text>
+                                        </View>
+                                        <View style={part.marginContent}>
+                                            <Text style={[part.textCounter, {color: detailBook.main_color}]}>
+                                                {detailBook.counter3}
+                                            </Text>
+                                            <Text
+                                                style={[part.textDescription]}>
+                                                {detailBook.counter3_content}
+                                            </Text>
+                                        </View>
+                                    </View>
+                                    <View style={[{marginLeft: -10, marginTop: 20}]}>
+                                        <Text style={part.textTitleContent}>
+                                            {detailBook.title5}
+                                        </Text>
+                                        <View style={part.lineTitle}/>
+                                        <View style={{marginTop: 20, marginBottom: 30}}>
+                                            <CardItem avatar style={part.noPadding}>
+                                                <View style={part.cardCmt}>
+                                                    <Image
+                                                        style={[part.avatarUserNormal, part.marginRightFar]}
+                                                        source={{uri: detailBook.author1_avt_url}}/>
+                                                    <Body style={part.noBorder}>
+                                                    <Text
+                                                        style={[part.textAuthorName, {color: detailBook.main_color}]}>{detailBook.author1 ? detailBook.author1.toUpperCase() : ''}</Text>
+                                                    <Text
+                                                        style={[part.textDescription]}>{detailBook.author1_comment}</Text>
+                                                    </Body>
+                                                </View>
+                                            </CardItem>
+                                            <CardItem avatar style={part.noPadding}>
+                                                <View style={part.cardCmt}>
+                                                    <Image
+                                                        style={[part.avatarUserNormal, part.marginRightFar]}
+                                                        source={{uri: detailBook.author2_avt_url}}/>
+                                                    <Body style={part.noBorder}>
+                                                    <Text
+                                                        style={[part.textAuthorName, {color: detailBook.main_color}]}>{detailBook.author2 ? detailBook.author2.toUpperCase() : ''}</Text>
+                                                    <Text
+                                                        style={[part.textDescription]}>{detailBook.author2_comment}</Text>
+                                                    </Body>
+                                                </View>
+
+                                            </CardItem>
+                                            <CardItem avatar style={[part.noPadding, {marginBottom: 50}]}>
+                                                <View style={part.cardCmt}>
+                                                    <Image
+                                                        style={[part.avatarUserNormal, part.marginRightFar]}
+                                                        source={{uri: detailBook.author3_avt_url}}/>
+                                                    <Body style={part.noBorder}>
+                                                    <Text
+                                                        style={[part.textAuthorName, {color: detailBook.main_color}]}>{detailBook.author3 ? detailBook.author3.toUpperCase() : ''}</Text>
+                                                    <Text
+                                                        style={[part.textDescription]}>{detailBook.author3_comment}</Text>
+                                                    </Body>
+                                                </View>
+                                            </CardItem>
+
+                                        </View>
+                                    </View>
+
+                                </View>
+                        }
                     </View>
-                    {
-                        isLoadingBook
-                            ?
-                            <View style={[part.wrapperContainer, {height: 80}]}>
-                                <Spinner color={color.gray}/>
-                            </View>
-                            :
-                            <View style={{alignItems: 'center'}}>
-                                <Image
-                                    resizeMode={'cover'}
-                                    style={[part.contentImage]}
-                                    source={{uri: detailBook.cover ? detailBook.cover : ''}}
-                                />
-                                <Image
-                                    resizeMode={'cover'}
-                                    style={[part.imageInItemBookDetail]}
-                                    source={{uri: detailBook.avatar ? detailBook.avatar : ''}}
-                                />
-                                <View style={[{marginTop: 130, flex: 1}, part.marginContent]}>
-                                    <Text style={part.textTitleContent}>
-                                        {detailBook.title1}
-                                    </Text>
-                                    <View style={part.lineTitle}></View>
-                                    <Text
-                                        style={part.textDescription}>
-                                        {detailBook.content1}
-                                    </Text>
-                                    <View style={{alignItems: 'center', flex: 1, justifyContent: 'flex-end'}}>
-                                        <Image
-                                            resizeMode={'cover'}
-                                            style={part.imageTitle1}
-                                            source={{uri: detailBook.img_url1 ? detailBook.img_url1 : ''}}
-                                        />
-                                    </View>
-                                </View>
+                </ParallaxScrollView>
 
-                                <View style={part.marginContent}>
-                                    <Text style={part.textTitleContent}>
-                                        {detailBook.title2}
-                                    </Text>
-                                    <View style={part.lineTitle}></View>
-                                    <Text style={part.textDescription}>
-                                        {detailBook.content2}
-                                    </Text>
-                                </View>
-                                <View>
-                                    <View style={part.marginContent}>
-                                        <Text style={[part.textCounter, {color: detailBook.main_color}]}>
-                                            {detailBook.counter1}
-                                        </Text>
-                                        <Text
-                                            style={[part.textDescription]}>
-                                            {detailBook.counter1_content}
-                                        </Text>
-                                    </View>
-                                    <View style={part.marginContent}>
-                                        <Text style={[part.textCounter, {color: detailBook.main_color}]}>
-                                            {detailBook.counter2}
-                                        </Text>
-                                        <Text
-                                            style={[part.textDescription]}>
-                                            {detailBook.counter2_content}
-                                        </Text>
-                                    </View>
-                                    <View style={part.marginContent}>
-                                        <Text style={[part.textCounter, {color: detailBook.main_color}]}>
-                                            {detailBook.counter3}
-                                        </Text>
-                                        <Text
-                                            style={[part.textDescription]}>
-                                            {detailBook.counter3_content}
-                                        </Text>
-                                    </View>
-                                </View>
-                                <View style={[{marginLeft: -10, marginTop: 20}]}>
-                                    <Text style={part.textTitleContent}>
-                                        {detailBook.title5}
-                                    </Text>
-                                    <View style={part.lineTitle}/>
-                                    <View style={{marginTop: 20, marginBottom: 30}}>
-                                        <CardItem avatar style={part.noPadding}>
-                                            <View style={part.cardCmt}>
-                                                <Image
-                                                    style={[part.avatarUserNormal, part.marginRightFar]}
-                                                    source={{uri: detailBook.author1_avt_url}}/>
-                                                <Body style={part.noBorder}>
-                                                <Text
-                                                    style={[part.textAuthorName, {color: detailBook.main_color}]}>{detailBook.author1 ? detailBook.author1.toUpperCase() : ''}</Text>
-                                                <Text
-                                                    style={[part.textDescription]}>{detailBook.author1_comment}</Text>
-                                                </Body>
-                                            </View>
-                                        </CardItem>
-                                        <CardItem avatar style={part.noPadding}>
-                                            <View style={part.cardCmt}>
-                                                <Image
-                                                    style={[part.avatarUserNormal, part.marginRightFar]}
-                                                    source={{uri: detailBook.author2_avt_url}}/>
-                                                <Body style={part.noBorder}>
-                                                <Text
-                                                    style={[part.textAuthorName, {color: detailBook.main_color}]}>{detailBook.author2 ? detailBook.author2.toUpperCase() : ''}</Text>
-                                                <Text
-                                                    style={[part.textDescription]}>{detailBook.author2_comment}</Text>
-                                                </Body>
-                                            </View>
-
-                                        </CardItem>
-                                        <CardItem avatar style={[part.noPadding, {marginBottom: 50}]}>
-                                            <View style={part.cardCmt}>
-                                                <Image
-                                                    style={[part.avatarUserNormal, part.marginRightFar]}
-                                                    source={{uri: detailBook.author3_avt_url}}/>
-                                                <Body style={part.noBorder}>
-                                                <Text
-                                                    style={[part.textAuthorName, {color: detailBook.main_color}]}>{detailBook.author3 ? detailBook.author3.toUpperCase() : ''}</Text>
-                                                <Text
-                                                    style={[part.textDescription]}>{detailBook.author3_comment}</Text>
-                                                </Body>
-                                            </View>
-                                        </CardItem>
-
-                                    </View>
-                                </View>
-
-                            </View>
-                    }
-
-                </Content>
                 <View style={part.wrapperBuyNowButton}>
                     <TouchableOpacity
                         style={part.buttonBuyNowFullSize}
@@ -409,8 +442,7 @@ class DetailBookContainer extends Component {
                                         <TouchableOpacity
                                             activeOpacity={1}
                                             style={[{marginTop: 10}]}>
-                                            <View
-                                                style={[part.wrapperItemBookModal, part.haveBorderBottom]}>
+                                            <View style={[part.wrapperItemBookModal, part.haveBorderBottom]}>
                                                 <View style={part.wrapperImageInCard}>
                                                     <Image
                                                         resizeMode={'cover'}

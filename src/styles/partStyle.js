@@ -75,7 +75,7 @@ const part = StyleSheet.create({
     wrapperTextInItemBookModal: {
         paddingRight: 10,
         marginLeft: 130,
-        width: wid - 160,
+        width: wid - 40 - (wid / 3 - 30) - 40,
     },
     wrapperImageInItemBookModal: {
         marginLeft: 20,
@@ -139,8 +139,8 @@ const part = StyleSheet.create({
     },
     wrapperImageInCard: {
         marginLeft: 20,
-        width: wid / 3,
-        height: 150,
+        width: wid / 3 - 30,
+        height: (wid / 3 - 30) * 1.5,
         position: 'absolute',
         backgroundColor: color.backGround
 
@@ -403,6 +403,12 @@ const part = StyleSheet.create({
         paddingBottom: 0,
     },
 
+    noMargin:{
+        marginTop: 0,
+        marginBottom: 0,
+        marginRight: 0,
+        marginLeft: 0,
+    },
     margin: {
         margin: 10,
     },
