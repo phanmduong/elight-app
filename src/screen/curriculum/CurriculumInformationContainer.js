@@ -255,6 +255,7 @@ class CurriculumInformationContainer extends Component {
                                     onLoad={this.onLoad}    // Callback when video loads
                                     onProgress={this.onProgress}    // Callback every ~250ms with currentTime
                                     onEnd={this.onEnd}
+                                    style={{backgroundColor:color.none}}
                                 />
                             </View>
                             <View style={{paddingTop: 10}}>

@@ -378,7 +378,7 @@ class BuyBookContainer extends Component {
                                                         style={[{marginTop: 10}]}>
                                                         <View
                                                             style={[part.wrapperItemBookModal, part.haveBorderBottom]}>
-                                                            <View style={part.wrapperImageInCard}>
+                                                            <View style={part.wrapperImageInModal}>
                                                                 <Image
                                                                     resizeMode={'cover'}
                                                                     style={part.imageInCard}
@@ -401,11 +401,10 @@ class BuyBookContainer extends Component {
                                                                     <Text style={part.textCategoryInBook}
                                                                           numberOfLines={1}>-20%</Text>
                                                                 </View>
-                                                                <View style={{
+                                                                <View style={[part.paddingTRB,{
                                                                     flexDirection: 'row',
                                                                     alignItems: 'center',
-                                                                    padding: 5,
-                                                                }}>
+                                                                }]}>
                                                                     <Text
                                                                         style={[part.textPrice2, part.marginRight]}>
                                                                         {numberBooks[item.key]} cuốn</Text>
@@ -425,7 +424,7 @@ class BuyBookContainer extends Component {
                                                                           }}
                                                                     />
                                                                 </View>
-                                                                <View style={{padding: 5}}>
+                                                                <View style={part.paddingTRB}>
                                                                     <Text
                                                                         style={part.textPrice2}>{priceItemBook[item.key]}
                                                                         đ</Text>

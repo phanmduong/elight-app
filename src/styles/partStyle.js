@@ -127,22 +127,30 @@ const part = StyleSheet.create({
         height: hei / 3,
     },
     wrapperTextInItemBook: {
-        paddingRight: 10,
         marginLeft: 160,
         width: wid - 160,
     },
     wrapperImageInItemBook: {
         marginLeft: 20,
-        width: 120,
-        height: 170,
+        width: size.wid / 3 ,
+        height: size.wid * 1.5 / 3,
         position: 'absolute',
 
     },
     wrapperImageInCard: {
         marginLeft: 20,
-        width: 100,
+        width: wid / 3,
         height: 150,
         position: 'absolute',
+        backgroundColor: color.backGround
+
+    },
+    wrapperImageInModal: {
+        marginLeft: 10,
+        width: wid / 3 - 20,
+        height: (wid / 3 - 20) * 1.5,
+        position: 'absolute',
+        backgroundColor: color.backGround
 
     },
     imageInItemBookDetail: {
@@ -153,8 +161,8 @@ const part = StyleSheet.create({
     },
     imageInItemBook: {
         flex: 1,
-        width: size.wid / 3,
-        height: size.hei / 4,
+        width: size.wid / 3 ,
+        height: size.wid * 1.5 / 3,
     },
     imageInCard: {
         flex: 1,
