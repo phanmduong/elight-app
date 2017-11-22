@@ -155,19 +155,22 @@ class BuyBookContainer extends Component {
     }
 
     buyBookStep3() {
-        let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-        if (this.state.email == '' || this.state.phone == '' || this.state.address == '' || this.state.payment == '' || this.state.name == '') {
-            Alert.alert("Vui lòng nhập đủ thông tin", "Bạn cần nhập đầy đủ thông tin để chúng tôi có thể giao hàng chính xác nhất.");
-        }
-        else if (reg.test(this.state.email) == false) {
-            Alert.alert("Vui lòng nhập Email hợp lệ", "Email không hợp lệ ")
-        }
-        else if (this.state.products == "[]") {
-            Alert.alert("Bạn chưa đặt sản phẩm nào")
-        }
-        else {
-            this.props.bookAction.orderBook(this.state);
-        }
+        // let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        // if (this.state.email == '' || this.state.phone == '' || this.state.address == '' || this.state.payment == '' || this.state.name == '') {
+        //     Alert.alert("Vui lòng nhập đủ thông tin", "Bạn cần nhập đầy đủ thông tin để chúng tôi có thể giao hàng chính xác nhất.");
+        // }
+        // else if (reg.test(this.state.email) == false) {
+        //     Alert.alert("Vui lòng nhập Email hợp lệ", "Email không hợp lệ ")
+        // }
+        // else if (this.state.products == "[]") {
+        //     Alert.alert("Bạn chưa đặt sản phẩm nào")
+        // }
+        // else {
+        //     this.props.bookAction.orderBook(this.state);
+        // }
+        this.setModalCart(false);
+        this.setModalInfoCard(false);
+        this.setModalBuySuccess(true);
     }
 
 
@@ -597,7 +600,7 @@ class BuyBookContainer extends Component {
                                                         style={part.buttonOrderInModal}
                                                         onPress={() => this.buyBookStep3()}
                                                     >
-                                                        {(this.props.isLoadingOrder) ? (
+                                                        {(1 == 0) ? (
                                                             <ActivityIndicator
                                                                 animated={true}
                                                                 color={color.navTitle}
@@ -605,7 +608,7 @@ class BuyBookContainer extends Component {
                                                                     flex: 1,
                                                                     justifyContent: 'center',
                                                                     alignItems: 'center',
-                                                                    height: 20,
+                                                                    height: 15,
                                                                 }}
                                                                 size='small'
                                                             />

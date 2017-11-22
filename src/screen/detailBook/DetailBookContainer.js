@@ -1,5 +1,17 @@
 import React, {Component} from 'react';
-import {Image, Platform, StatusBar, Text, View, TouchableOpacity, Alert, Modal, PanResponder, FlatList, ActivityIndicator} from 'react-native';
+import {
+    Image,
+    Platform,
+    StatusBar,
+    Text,
+    View,
+    TouchableOpacity,
+    Alert,
+    Modal,
+    PanResponder,
+    FlatList,
+    ActivityIndicator
+} from 'react-native';
 import part from '../../styles/partStyle';
 import * as color from '../../styles/color';
 import * as size from '../../styles/size';
@@ -36,10 +48,10 @@ class DetailBookContainer extends Component {
             modalCart: false,
             modalInfoCart: false,
             modalBuySuccess: false,
-            numberBooks: params.numberBooks ,
+            numberBooks: params.numberBooks,
             priceBooks: params.priceBooks,
             priceItemBook: params.priceItemBook,
-            productInStore : params.productInStore,
+            productInStore: params.productInStore,
             products: '',
             books: params.books,
             name: '',
@@ -50,6 +62,7 @@ class DetailBookContainer extends Component {
             priceTotal: params.priceTotal,
         }
     }
+
     componentWillMount() {
         this.props.detailBookAction.detailBook(this.props.navigation.state.params.id);
         this.panResponder = PanResponder.create({
@@ -57,13 +70,15 @@ class DetailBookContainer extends Component {
             onPanResponderGrant: this._onPanResponderGrant.bind(this),
         })
     }
-    componentWillReceiveProps(nextProps){
+
+    componentWillReceiveProps(nextProps) {
         if (nextProps.status === 1) {
             this.setModalBuySuccess(true);
             this.setModalCart(false);
             this.setModalInfoCard(false);
         }
     }
+
     setModalCart(visible) {
         this.setState({modalCart: visible});
     }
@@ -86,18 +101,20 @@ class DetailBookContainer extends Component {
         let numberBooks = this.state.numberBooks;
         let priceTotal = 0;
         let products = [];
-        if(productsInStore.length > 0){
-            products = productsInStore.filter((item) => {return item.key == index})
+        if (productsInStore.length > 0) {
+            products = productsInStore.filter((item) => {
+                return item.key == index
+            })
         }
-        if( products.length == 0 || productsInStore.length == 0) {
+        if (products.length == 0 || productsInStore.length == 0) {
             productsInStore.push(books[index]);
         }
         let i = 0;
-        while (i < numberBooks.length){
+        while (i < numberBooks.length) {
             priceTotal += priceBooks[i] * numberBooks[i] * 0.8;
             i++;
         }
-        this.setState({productInStore: productsInStore, priceTotal : priceTotal, numberBooks : numberBooks});
+        this.setState({productInStore: productsInStore, priceTotal: priceTotal, numberBooks: numberBooks});
     }
 
     buyBookStep2() {
@@ -181,6 +198,7 @@ class DetailBookContainer extends Component {
             payment: value
         });
     }
+
     render() {
         const {navigate} = this.props.navigation;
         const {goBack} = this.props.navigation;
@@ -191,7 +209,7 @@ class DetailBookContainer extends Component {
             <Container ref="page" style={part.wrapperContainer}>
                 <StatusBar
                     backgroundColor={color.bgModal}
-                    barStyle={ Platform.OS === 'ios' ? "dark-content" : "light-content"}
+                    barStyle={Platform.OS === 'ios' ? "dark-content" : "light-content"}
                 />
                 {
                     Platform.OS === 'ios'
@@ -241,9 +259,6 @@ class DetailBookContainer extends Component {
                                     style={[part.imageInItemBookDetail]}
                                     source={{uri: detailBook.avatar ? detailBook.avatar : ''}}
                                 />
-                                {
-                                    console.log(detailBook.avatar)
-                                }
                                 <View style={[{marginTop: 130, flex: 1}, part.marginContent]}>
                                     <Text style={part.textTitleContent}>
                                         {detailBook.title1}
@@ -301,10 +316,10 @@ class DetailBookContainer extends Component {
                                     </View>
                                 </View>
                                 <View style={[{marginLeft: -10, marginTop: 20}]}>
-                                        <Text style={part.textTitleContent}>
-                                            {detailBook.title5}
-                                        </Text>
-                                        <View style={part.lineTitle}/>
+                                    <Text style={part.textTitleContent}>
+                                        {detailBook.title5}
+                                    </Text>
+                                    <View style={part.lineTitle}/>
                                     <View style={{marginTop: 20, marginBottom: 30}}>
                                         <CardItem avatar style={part.noPadding}>
                                             <View style={part.cardCmt}>
@@ -358,7 +373,7 @@ class DetailBookContainer extends Component {
                     <TouchableOpacity
                         style={part.buttonBuyNowFullSize}
                         onPress={() => {
-                             this.buyBookStep1(this.props.navigation.state.params.key)
+                            this.buyBookStep1(this.props.navigation.state.params.key)
                         }}
                     >
                         <Text style={[part.paddingRight, part.textBigLight]}>Đặt mua
@@ -686,15 +701,15 @@ function mapStateToProps(state) {
     return {
         detailBook: state.detailBook.detailBook,
         isLoadingBook: state.detailBook.isLoadingBook,
-        status : state.book.status,
-        isLoadingOrder : state.book.isLoadingOrder
+        status: state.book.status,
+        isLoadingOrder: state.book.isLoadingOrder
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
         detailBookAction: bindActionCreators(detailBookAction, dispatch),
-        bookAction : bindActionCreators(bookAction, dispatch)
+        bookAction: bindActionCreators(bookAction, dispatch)
     }
 }
 

@@ -95,10 +95,17 @@ const part = StyleSheet.create({
         justifyContent: 'center',
     },
     contentImage: {
+        marginTop: 20,
+        flex: 1,
+        width: wid,
+        height: hei / 3,
+    },
+    wrapperContentImage: {
         flex: 1,
         marginTop: 20,
         width: wid,
         height: hei / 3,
+        backgroundColor: 'red'
     },
     wrapperBuyBook: {
         width: wid,
@@ -698,6 +705,12 @@ const part = StyleSheet.create({
         flex: 1,
     },
     bottomModal: {
+        height: 50,
+        padding: 10,
+        alignItems: 'center',
+        bottom: 0,
+    },
+    bottomModalInLesson: {
         height: 110,
         padding: 10,
         alignItems: 'center',

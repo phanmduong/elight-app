@@ -93,7 +93,7 @@ class CurriculumListContainer extends Component {
                                             <View style={{flexDirection: 'row', alignItems: 'center'}}>
                                                 <Left style={{flexDirection: 'row'}}>
                                                     <View>
-                                                        <Text style={[part.titleDarkBold, part.marginRight]}>Buổi {item.order}</Text>
+                                                        <Text style={[part.titleDarkBold, part.marginRight]}>Lesson {item.order}</Text>
                                                         <Text style={part.describeDarkGray}>{item.name}</Text>
                                                     </View>
                                                     <Right style={part.marginRight}>

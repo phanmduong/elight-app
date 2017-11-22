@@ -29,7 +29,7 @@ class CurriculumContainer extends Component {
             <Container style={part.wrapperContainer}>
                 <StatusBar
                     backgroundColor={color.bgModal}
-                    barStyle={ Platform.OS === 'ios' ? "dark-content" : "light-content"}
+                    barStyle={Platform.OS === 'ios' ? "dark-content" : "light-content"}
                 />
                 <ParallaxScrollView
                     backgroundColor={color.backGround}
@@ -116,11 +116,11 @@ class CurriculumContainer extends Component {
                                                 <Image
                                                     style={part.avatarCourse}
                                                     source={{uri: item.icon_url}}/>
-                                                <Body style={part.noBorder}>
+                                                <Body style={[part.noBorder, {height: 80, justifyContent: 'flex-start'}]}>
                                                 <Text style={part.textTitleAuthorBlue}>{item.name}</Text>
                                                 <Text
                                                     style={[part.titleDark, part.paddingLine]}>
-                                                    {item.duration} buổi học
+                                                    {item.duration} bài
                                                 </Text>
                                                 </Body>
                                             </Left>

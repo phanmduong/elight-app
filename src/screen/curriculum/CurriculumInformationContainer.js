@@ -196,7 +196,7 @@ class CurriculumInformationContainer extends Component {
 
 
                 </ParallaxScrollView>
-                <View style={[part.bottomModal, part.haveBorderTop]}>
+                <View style={[part.bottomModalInLesson, part.haveBorderTop]}>
                     <View style={{flexDirection: 'row'}}>
                         <TouchableOpacity
                             activeOpacity={1}
