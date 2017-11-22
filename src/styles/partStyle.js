@@ -65,7 +65,7 @@ const part = StyleSheet.create({
         height: 200,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: color.backGround,
+        backgroundColor: color.logoColor,
     },
     wrapperItemBookModal: {
         width: wid - 20,
@@ -171,7 +171,7 @@ const part = StyleSheet.create({
     wrapperStatusBarNoPadding: {
         width: size.wid,
         height: 20,
-        backgroundColor: color.none,
+        backgroundColor: color.logoColor,
     },
     wrapperPost: {
         flex: 1,
@@ -259,7 +259,7 @@ const part = StyleSheet.create({
         fontFamily: (Platform.OS === 'ios') ? 'Lobster' : 'Lobster',
         fontSize: 30,
         fontWeight: Platform.OS === 'ios' ? 'bold' : 'normal',
-        color: color.logoColor,
+        color: color.navTitle,
     },
     titleType: {
         fontFamily: (Platform.OS === 'ios') ? 'Montserrat' : 'Montserrat-Bold',
@@ -520,7 +520,7 @@ const part = StyleSheet.create({
         fontFamily: (Platform.OS === 'ios') ? 'Lobster' : 'Lobster',
         fontWeight: Platform.OS === 'ios' ? '600' : 'normal',
         fontSize: 50,
-        color: color.logoColor,
+        color: color.navTitle,
         marginBottom: Platform.OS === 'ios' ? 0 : 30
 
 
