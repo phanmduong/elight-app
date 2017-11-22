@@ -31,6 +31,7 @@ class CurriculumContainer extends Component {
                     backgroundColor={color.bgModal}
                     barStyle={Platform.OS === 'ios' ? "dark-content" : "light-content"}
                 />
+
                 <ParallaxScrollView
                     backgroundColor={color.backGround}
                     showsVerticalScrollIndicator={false}

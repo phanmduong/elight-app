@@ -88,7 +88,7 @@ class HomeContainer extends Component {
             <Container style={[part.wrapperContainer, {paddingBottom: 0}]}>
                 <StatusBar
                     backgroundColor={color.bgModal}
-                    barStyle={ Platform.OS === 'ios' ? "dark-content" : "light-content"}
+                    barStyle={ Platform.OS === 'ios' ? "light-content" : "light-content"}
                 />
                 {
                     Platform.OS === 'ios'
@@ -99,7 +99,7 @@ class HomeContainer extends Component {
                         <View/>
                 }
                 <View>
-                    <Item style={[part.noBorder, {paddingLeft: 15}]}>
+                    <View style={[part.noBorder, {flexDirection:'row' ,paddingLeft: 15, backgroundColor: color.logoColor}]}>
                         <Text style={[part.textLogo, part.paddingLineFar]}>
                             eLight
                         </Text>
@@ -109,13 +109,13 @@ class HomeContainer extends Component {
                                 onPress={() => navigate('DrawerOpen')}>
                                 <Icon
                                     name="materialCommunity|menu"
-                                    color={color.logoColor}
-                                    size={size.iconGiant}
+                                    color={color.navTitle}
+                                    size={30}
                                     style={part.padding}
                                 />
                             </TouchableOpacity>
                         </Right>
-                    </Item>
+                    </View>
                 </View>
                 <View style={{ height: size.hei - 70}}>
                     {
@@ -144,7 +144,7 @@ class HomeContainer extends Component {
                                         }
 
                                         renderItem={({item}) =>
-                                            <View style={[part.wrapperPost, {marginBottom: 20}]}>
+                                            <View style={[part.wrapperPost, {marginTop: 10, marginBottom: 10}]}>
                                                 <TouchableOpacity
                                                     activeOpacity={0.8}
                                                     style={part.imagePost}

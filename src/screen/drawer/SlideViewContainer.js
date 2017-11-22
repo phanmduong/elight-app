@@ -29,7 +29,7 @@ class SlideViewComponent extends Component {
         const {navigate} = this.props.navigation;
         return (
             <Container style={part.wrapperContainer}>
-                <View style={[part.wrapperImageInDrawer, part.haveBorderBottom]}>
+                <View style={[part.wrapperImageInDrawer]}>
                     <Text style={part.textLogoInDrawer}>eLight</Text>
                 </View>
                 <View style={part.padding}>
