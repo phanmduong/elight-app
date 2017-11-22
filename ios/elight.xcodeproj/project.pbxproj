@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -55,9 +56,7 @@
 		8791718B45464EBAB9E1B2FE /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1307EDCB865849FC8FC25EB0 /* SimpleLineIcons.ttf */; };
 		918C6E9679F04DC4A97BF163 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A7A131533FB4715963D50A9 /* Entypo.ttf */; };
 		96C755EC09884FA4B08FA000 /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A07F9DF8F811433DBF172518 /* Montserrat-SemiBoldItalic.ttf */; };
-		9C55F510E39F4F509781DACB /* libRNSound.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0804262769004E7FB4F4B544 /* libRNSound.a */; };
 		A2E2325B99014484891C55D9 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 672F76A9316C4F18B942E403 /* Montserrat-Light.ttf */; };
-		A6C8C7E440CE424F8346ABD3 /* libMusicControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A1A3E0C2823407EAFD5DD0F /* libMusicControl.a */; };
 		A86880896A0044C7915EDA78 /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D050610425D425F8FF2C372 /* Montserrat-ThinItalic.ttf */; };
 		A885631DD8C143D39B3419F1 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62ADF553B2B842AF91161B89 /* Montserrat-ExtraBold.ttf */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
@@ -72,7 +71,6 @@
 		DA4C46917F8E4A7687D2DEEB /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3EFA795DCBB947669E550D1A /* Montserrat-Medium.ttf */; };
 		E5B1ECBF8619421188752A2B /* Montserrat-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18B4212096D1499BB3FE2437 /* Montserrat-ExtraBoldItalic.ttf */; };
 		EA48BE9887AD4FABB6F6D839 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC470DE423774C0BA255EBE7 /* Octicons.ttf */; };
-		F7AF997DB4864268959709CC /* libReactNativeAudioStreaming.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA91F65046124A189CF0D57E /* libReactNativeAudioStreaming.a */; };
 		FBD559E400854E63B79A1E1C /* Lobster-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8AB97464DED4AD9825EEA5C /* Lobster-Regular.ttf */; };
 /* End PBXBuildFile section */
 
@@ -500,10 +498,7 @@
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				03681D230010453B9F1923C1 /* libRNVectorIcons.a in Frameworks */,
-				A6C8C7E440CE424F8346ABD3 /* libMusicControl.a in Frameworks */,
 				3655FC2DA657447EB333C821 /* libRCTVideo.a in Frameworks */,
-				9C55F510E39F4F509781DACB /* libRNSound.a in Frameworks */,
-				F7AF997DB4864268959709CC /* libReactNativeAudioStreaming.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,6 +641,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		17F64E111FC5471B0059B773 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				35F7346A62D043CAB6C8372B /* libRNVectorIcons.a */,
+				6A1A3E0C2823407EAFD5DD0F /* libMusicControl.a */,
+				9DD0CEC8341344318C4557B3 /* libRCTVideo.a */,
+				0804262769004E7FB4F4B544 /* libRNSound.a */,
+				CA91F65046124A189CF0D57E /* libReactNativeAudioStreaming.a */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -706,6 +713,7 @@
 				00E356EF1AD99517003FC87E /* elightTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				BFF2EE5C7B6246BDAD1B7293 /* Resources */,
+				17F64E111FC5471B0059B773 /* Recovered References */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -912,6 +920,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = 6BZ59393SB;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1571,6 +1580,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = 6BZ59393SB;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
@@ -1587,6 +1597,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = elight;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1596,6 +1607,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6BZ59393SB;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
@@ -1612,6 +1624,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = elight;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
