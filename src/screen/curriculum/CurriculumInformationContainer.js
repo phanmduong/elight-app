@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {
-    Text, View, Platform, StatusBar, TouchableOpacity, Image
+    Text, View, Platform, StatusBar, TouchableOpacity, Image,TouchableWithoutFeedback
 } from 'react-native';
 import {
     Body, CardItem, Header, Container, Button,
@@ -35,6 +35,7 @@ class CurriculumInformationContainer extends Component {
         this.onLoad = this.onLoad.bind(this);
         this.onProgress = this.onProgress.bind(this);
         this.onEnd = this.onEnd.bind(this);
+        this.progressPress = this.progressPress.bind(this);
     }
 
     componentWillMount() {
@@ -86,6 +87,11 @@ class CurriculumInformationContainer extends Component {
             second: 0,
             paused: true
         })
+    }
+    progressPress(e){
+        const position = e.nativeEvent.locationX
+        const progress = (position/(size.wid - 20)) * this.state.duration
+        this.player.seek(progress)
     }
 
     render() {
@@ -242,6 +248,9 @@ class CurriculumInformationContainer extends Component {
                                     </Text>
                                 </View>
                                 <Video
+                                    ref={(ref) => {
+                                        this.player = ref
+                                    }}
                                     source={{uri: "https://api.soundcloud.com/tracks/47893729/stream?client_id=3YnCkFCcm5cBfYqlXr3ufGY7k2izG1lv"}}   // Can be a URL or a local file.
                                     rate={play}                              // 0 is paused, 1 is normal.
                                     volume={1}                            // 0 is muted, 1 is normal.
@@ -258,12 +267,14 @@ class CurriculumInformationContainer extends Component {
                                     style={{backgroundColor:color.none}}
                                 />
                             </View>
-                            <View style={{paddingTop: 10}}>
+                            <View style = {{marginTop : 10}}>
+                            <TouchableWithoutFeedback style={{paddingTop: 10}} onPress = {this.progressPress}>
                                 <View style={part.wrapperDeadline}>
                                     <View
                                         style={[part.deadlineProgress, {width: widthDeadlineProgress}]}>
                                     </View>
                                 </View>
+                            </TouchableWithoutFeedback>
                             </View>
                             <View style={[part.paddingTop, {
                                 width: size.wid - 20,
