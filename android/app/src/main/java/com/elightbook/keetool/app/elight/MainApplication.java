@@ -1,4 +1,4 @@
-package com.elight;
+package com.elightbook.keetool.app.elight;
 
 import android.app.Application;
 

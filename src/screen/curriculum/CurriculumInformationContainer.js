@@ -23,7 +23,7 @@ class CurriculumInformationContainer extends Component {
         super();
         this.state = {
             play: 1,
-            paused: true,
+            paused: false,
             duration: 0.0,
             currentTime: 0.0,
             minute: 0,
@@ -177,7 +177,7 @@ class CurriculumInformationContainer extends Component {
                     )}
                     renderFixedHeader={() => (
                         <View key="fixed-header" style={part.iconInDrawerNav}>
-                            <Left style={Platform.OS === 'ios' ? {marginTop: 20} : {marginTop: 10}}>
+                            <Left style={Platform.OS === 'ios' ? {marginTop: 20} : ''}>
                                 <BackButton goBack={goBack}/>
                             </Left>
                         </View>
