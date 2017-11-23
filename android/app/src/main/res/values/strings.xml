@@ -1,5 +1,5 @@
 <resources>
-    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey"></string>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">TX6CPWq-CacPJ_FGDu7KszQrGoIJ91a6f11c-8611-4707-bff5-9033ff68ea8f</string>
     <string moduleConfig="true" name="appcenterCrashes_whenToSendCrashes">ALWAYS_SEND</string>
     <string moduleConfig="true" name="appcenterAnalytics_whenToEnableAnalytics">ALWAYS_SEND</string>
     <string name="app_name">elight</string>

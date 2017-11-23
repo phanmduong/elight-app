@@ -56,7 +56,7 @@ class PostContainer extends Component {
         // if (this.state.blog && this.state.blog.related_posts) {
         //     this.props.navigation.navigate('BackPost', {blog: this.state.blog})
         // } else {
-            this.props.navigation.goBack();
+        this.props.navigation.goBack();
         // }
     }
 
@@ -96,18 +96,9 @@ class PostContainer extends Component {
 
                                 <CardItem style={[part.cardHeader2, part.noPaddingBottom]}>
                                     <Item style={[part.noBorder]}>
-                                        {
-                                            data.author
-                                                ?
-                                                <Image
-                                                    source={{uri: `http://${data.author.avatar_url}`}}
-                                                    style={part.avatarUserNormal}/>
-                                                :
-                                                <Image
-                                                    source={{uri: 'https://exelord.github.io/ember-initials/images/default-d5f51047d8bd6327ec4a74361a7aae7f.jpg'}}
-                                                    style={part.avatarUserNormal}/>
-                                        }
-
+                                        <Image
+                                            source={{uri: data.author ? `http://${data.author.avatar_url}` : ''}}
+                                            style={part.avatarUserNormal}/>
                                     </Item>
                                 </CardItem>
                                 <CardItem style={[part.cardHeader2, part.noPaddingBottom]}>
@@ -189,48 +180,48 @@ class PostContainer extends Component {
                                 </View>
                                 <WebViewAutoHeight source={data.content ? data.content : ''}/>
                                 {/*<View style={[part.wrapperBottomPost, part.haveBorderTop]}>*/}
-                                    {/*<Text style={part.textTitlePostInPost}>*/}
-                                        {/*BÀI VIẾT LIÊN QUAN*/}
-                                    {/*</Text>*/}
-                                    {/*<FlatList*/}
-                                        {/*showsVerticalScrollIndicator={false}*/}
-                                        {/*data={data.related_posts}*/}
-                                        {/*renderItem={({item}) =>*/}
-                                            {/*<View style={part.wrapperPost}>*/}
-                                                {/*<TouchableOpacity*/}
-                                                    {/*activeOpacity={0.9}*/}
-                                                    {/*style={[part.imagePost, part.shadow]}*/}
-                                                    {/*onPress={() => {*/}
-                                                        {/*navigate('Post', {id: item.id})*/}
-                                                    {/*}}*/}
-                                                {/*>*/}
-                                                    {/*<Image*/}
-                                                        {/*source={{uri: `http://${item.url}`}}*/}
-                                                        {/*style={part.imagePost}*/}
-                                                    {/*/>*/}
-                                                    {/*<View*/}
-                                                        {/*style={[part.noBorder, part.wrapperTextCategoryInImage]}>*/}
-                                                        {/*<Text style={part.textCategoryInImage}*/}
-                                                              {/*numberOfLines={1}>*/}
-                                                            {/*{item.category ? item.category.toUpperCase() : 'BLOG'}*/}
-                                                        {/*</Text>*/}
-                                                    {/*</View>*/}
-                                                {/*</TouchableOpacity>*/}
-                                                {/*<View style={part.wrapperTextPost}>*/}
-                                                    {/*<Text style={part.textTitlePost}>{item.title}</Text>*/}
-                                                    {/*<View style={part.wrapperAuthor}>*/}
-                                                        {/*<Image*/}
-                                                            {/*source={{uri: item.author ? `http://${item.author.avatar_url}` : ''}}*/}
-                                                            {/*style={[part.avatarUserTiny, part.marginRight]}*/}
-                                                        {/*/>*/}
-                                                        {/*<Text style={[part.textTitleAuthor, part.paddingLine]}>*/}
-                                                            {/*{item.author ? item.author.name : ''}*/}
-                                                        {/*</Text>*/}
-                                                    {/*</View>*/}
-                                                {/*</View>*/}
-                                            {/*</View>*/}
-                                        {/*}*/}
-                                    {/*/>*/}
+                                {/*<Text style={part.textTitlePostInPost}>*/}
+                                {/*BÀI VIẾT LIÊN QUAN*/}
+                                {/*</Text>*/}
+                                {/*<FlatList*/}
+                                {/*showsVerticalScrollIndicator={false}*/}
+                                {/*data={data.related_posts}*/}
+                                {/*renderItem={({item}) =>*/}
+                                {/*<View style={part.wrapperPost}>*/}
+                                {/*<TouchableOpacity*/}
+                                {/*activeOpacity={0.9}*/}
+                                {/*style={[part.imagePost, part.shadow]}*/}
+                                {/*onPress={() => {*/}
+                                {/*navigate('Post', {id: item.id})*/}
+                                {/*}}*/}
+                                {/*>*/}
+                                {/*<Image*/}
+                                {/*source={{uri: `http://${item.url}`}}*/}
+                                {/*style={part.imagePost}*/}
+                                {/*/>*/}
+                                {/*<View*/}
+                                {/*style={[part.noBorder, part.wrapperTextCategoryInImage]}>*/}
+                                {/*<Text style={part.textCategoryInImage}*/}
+                                {/*numberOfLines={1}>*/}
+                                {/*{item.category ? item.category.toUpperCase() : 'BLOG'}*/}
+                                {/*</Text>*/}
+                                {/*</View>*/}
+                                {/*</TouchableOpacity>*/}
+                                {/*<View style={part.wrapperTextPost}>*/}
+                                {/*<Text style={part.textTitlePost}>{item.title}</Text>*/}
+                                {/*<View style={part.wrapperAuthor}>*/}
+                                {/*<Image*/}
+                                {/*source={{uri: item.author ? `http://${item.author.avatar_url}` : ''}}*/}
+                                {/*style={[part.avatarUserTiny, part.marginRight]}*/}
+                                {/*/>*/}
+                                {/*<Text style={[part.textTitleAuthor, part.paddingLine]}>*/}
+                                {/*{item.author ? item.author.name : ''}*/}
+                                {/*</Text>*/}
+                                {/*</View>*/}
+                                {/*</View>*/}
+                                {/*</View>*/}
+                                {/*}*/}
+                                {/*/>*/}
                                 {/*</View>*/}
                             </View>
                     }

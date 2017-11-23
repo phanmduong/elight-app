@@ -81,9 +81,9 @@ class BuyBookContainer extends Component {
             while (i < nextProps.books.length) {
                 let key = {key: i};
                 let arr = Object.assign(post[i], key);
-                numberBooks.push(0);
+                numberBooks.push(1);
                 priceBooks.push(post[i].price);
-                priceItemBook.push(0);
+                priceItemBook.push(post[i].price * 0.8);
                 books.push(arr);
                 i++;
             }
@@ -132,7 +132,7 @@ class BuyBookContainer extends Component {
             productsInStore.push(books[index]);
         }
         let i = 0;
-        while (i < numberBooks.length) {
+        while (i < productsInStore.length) {
             priceTotal += priceBooks[i] * numberBooks[i] * 0.8;
             i++;
         }
@@ -342,14 +342,7 @@ class BuyBookContainer extends Component {
                                                         </TouchableOpacity>
                                                         <TouchableOpacity
                                                             style={part.buttonBuyNow}
-                                                            onPress={
-                                                                item.key || item.key != undefined
-                                                                    ?
-                                                                    () => this.buyBookStep1(item.key)
-                                                                    :
-                                                                    () => {
-                                                                    }
-                                                            }
+                                                            onPress={() => this.buyBookStep1(item.key)}
                                                         >
                                                             <Text
                                                                 style={[part.paddingRight, part.textBigLight]}>Đặt
