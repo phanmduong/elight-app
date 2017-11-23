@@ -295,7 +295,7 @@ class BuyBookContainer extends Component {
                                             showsVerticalScrollIndicator={false}
                                             data={books}
                                             renderItem={({item}) =>
-                                                <View style={{marginTop: 50}}>
+                                                <View style={{marginTop: 20}}>
                                                     <View style={[part.wrapperItemBook, part.haveBorderBottom]}>
                                                         <View style={part.wrapperTextInItemBook}>
                                                             <Text style={part.textTitlePost}>{item.name}</Text>
