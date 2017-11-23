@@ -9,7 +9,7 @@ import {
     Platform,
     Text,
     TouchableOpacity,
-    View
+    View, StatusBar
 } from 'react-native';
 import {
     Body,
@@ -232,6 +232,10 @@ class BuyBookContainer extends Component {
         const {priceItemBook, numberBooks} = this.state;
         return (
             <Container ref="page" style={part.wrapperContainer}>
+                <StatusBar
+                    backgroundColor={color.bgModal}
+                    barStyle={Platform.OS === 'ios' ? "dark-content" : "light-content"}
+                />
                 <ParallaxScrollView
                     backgroundColor={color.backGround}
                     showsVerticalScrollIndicator={false}

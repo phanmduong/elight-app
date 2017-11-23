@@ -215,7 +215,7 @@ const part = StyleSheet.create({
         color: color.text,
     },
     textLogo: {
-        fontFamily: (Platform.OS === 'ios') ? 'Lobster' : 'Lobster',
+        fontFamily: (Platform.OS === 'ios') ? 'Lobster' : 'Lobster-Regular',
         fontSize: 30,
         fontWeight: Platform.OS === 'ios' ? 'bold' : 'normal',
         color: color.navTitle,
@@ -312,8 +312,8 @@ const part = StyleSheet.create({
         paddingBottom: 8,
     },
     paddingLineFar: {
-        paddingTop: 15,
-        paddingBottom: 15,
+        paddingTop: 10,
+        paddingBottom: 10,
     },
     paddingTRB: {
         paddingRight: 5,
@@ -468,7 +468,7 @@ const part = StyleSheet.create({
 
     },
     textLogoInDrawer: {
-        fontFamily: (Platform.OS === 'ios') ? 'Lobster' : 'Lobster',
+        fontFamily: (Platform.OS === 'ios') ? 'Lobster' : 'Lobster-Regular',
         fontWeight: Platform.OS === 'ios' ? '600' : 'normal',
         fontSize: 50,
         color: color.navTitle,

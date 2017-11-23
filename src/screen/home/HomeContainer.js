@@ -109,7 +109,7 @@ class HomeContainer extends Component {
                                 <Icon
                                     name="materialCommunity|bell"
                                     color={color.navTitle}
-                                    size={25}
+                                    size={size.iconGiant}
                                     style={part.padding}
                                 />
                             </TouchableOpacity>
@@ -128,7 +128,7 @@ class HomeContainer extends Component {
                                 <Icon
                                     name="materialCommunity|menu"
                                     color={color.navTitle}
-                                    size={30}
+                                    size={size.iconGiant}
                                     style={part.padding}
                                 />
                             </TouchableOpacity>

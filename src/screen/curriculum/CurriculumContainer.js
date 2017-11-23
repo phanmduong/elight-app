@@ -76,7 +76,7 @@ class CurriculumContainer extends Component {
                     )}
                     renderFixedHeader={() => (
                         <View key="fixed-header" style={part.iconInDrawerNav}>
-                            <Left style={Platform.OS === 'ios' ? {marginTop: 20} : {marginTop: 10}}>
+                            <Left style={Platform.OS === 'ios' ? {marginTop: 20} : {marginTop: 0}}>
                                 <BackButton goBack={goBack}/>
                             </Left>
                         </View>

@@ -14,4 +14,4 @@ export const navTabBar          = '#313131';
 export const green              = 'rgb(1, 175, 30)';
 export const star               = '#ffd800';
 export const transparentBlack   = 'rgba(0,0,0,0.5)';
-export const bgModal   = 'rgba(0, 0, 0, 0.7)';
+export const bgModal   = '#3085D0';
