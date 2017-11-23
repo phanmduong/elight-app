@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -690,6 +691,10 @@
 				9DD0CEC8341344318C4557B3 /* libRCTVideo.a */,
 				0804262769004E7FB4F4B544 /* libRNSound.a */,
 				CA91F65046124A189CF0D57E /* libReactNativeAudioStreaming.a */,
+				41E83DD679034996AF59D111 /* libAppCenterReactNative.a */,
+				7C372078442343AA8B752C6E /* libAppCenterReactNativeAnalytics.a */,
+				1BD8B2FD7DEE4EFE8D3B6147 /* libAppCenterReactNativeCrashes.a */,
+				F08058D169A747B4B403DD4E /* libCodePush.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
