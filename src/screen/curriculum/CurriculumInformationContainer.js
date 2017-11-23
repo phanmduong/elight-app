@@ -89,7 +89,7 @@ class CurriculumInformationContainer extends Component {
     }
     progressPress(e){
         const position = e.nativeEvent.locationX
-        const progress = (position/(size.wid - 20)) * this.state.duration
+        const progress = ((position)/(size.wid - 20)) * this.state.duration
         this.player.seek(progress)
     }
 

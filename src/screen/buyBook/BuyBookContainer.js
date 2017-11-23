@@ -71,7 +71,7 @@ class BuyBookContainer extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.isLoading !== this.props.isLoading) {
+        if (nextProps.isLoading !== this.props.isLoading && !nextProps.isLoading && this.props.books !== nextProps.props) {
             let i = this.props.books.length;
             let numberBooks = this.state.numberBooks;
             let priceBooks = this.state.priceBooks;
