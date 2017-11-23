@@ -342,14 +342,7 @@ class BuyBookContainer extends Component {
                                                         </TouchableOpacity>
                                                         <TouchableOpacity
                                                             style={part.buttonBuyNow}
-                                                            onPress={
-                                                                item.key || item.key != undefined
-                                                                    ?
-                                                                    () => this.buyBookStep1(item.key)
-                                                                    :
-                                                                    () => {
-                                                                    }
-                                                            }
+                                                            onPress={() => this.buyBookStep1(item.key)}
                                                         >
                                                             <Text
                                                                 style={[part.paddingRight, part.textBigLight]}>Đặt
