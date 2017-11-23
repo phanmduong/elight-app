@@ -232,442 +232,463 @@ class BuyBookContainer extends Component {
         const {priceItemBook, numberBooks} = this.state;
         return (
             <Container ref="page" style={part.wrapperContainer}>
-                {
-                    isLoading
-                        ?
-                        <View style={[part.wrapperContainer, {marginTop: 50}]}>
-                            <Spinner color={color.gray}/>
+                <ParallaxScrollView
+                    backgroundColor={color.backGround}
+                    showsVerticalScrollIndicator={false}
+                    headerBackgroundColor={color.backGround}
+                    stickyHeaderHeight={size.STICKY_HEADER_HEIGHT}
+                    parallaxHeaderHeight={120}
+                    backgroundSpeed={10}
+                    renderBackground={() => (
+                        <View style={part.wrapperImageInGetFull}>
+                            <View key="background">
+                            </View>
                         </View>
-                        :
-                        <ParallaxScrollView
-                            backgroundColor={color.backGround}
-                            showsVerticalScrollIndicator={false}
-                            headerBackgroundColor={color.backGround}
-                            stickyHeaderHeight={size.STICKY_HEADER_HEIGHT}
-                            parallaxHeaderHeight={120}
-                            backgroundSpeed={10}
-                            renderBackground={() => (
-                                <View style={part.wrapperImageInGetFull}>
-                                    <View key="background">
-                                    </View>
-                                </View>
-                            )}
-                            renderForeground={() => (
-                                <View key="parallax-header" style={[parallaxStyle.parallaxHeaderTitle]}>
+                    )}
+                    renderForeground={() => (
+                        <View key="parallax-header" style={[parallaxStyle.parallaxHeaderTitle]}>
+                            <View>
+                                <Item style={[part.noBorder, {paddingLeft: 15}]}>
+                                    <Text style={[part.titleLargeDarkBold]}>
+                                        MUA SÁCH
+                                    </Text>
+                                </Item>
+                            </View>
+                        </View>
+                    )}
+                    renderStickyHeader={() => (
+                        <View key="sticky-header" style={parallaxStyle.stickySection}>
+                            <View style={part.iconInDrawerNav}>
+                                <Left style={Platform.OS === 'ios' ? {marginTop: 20} : ''}>
+                                    <Body style={{padding: 30}}>
+                                    <Text style={[part.titleSmallDarkBold, {fontSize: 15}]} numberOfLines={1}>
+                                        MUA SÁCH
+                                    </Text>
+                                    </Body>
+                                </Left>
+                            </View>
+                        </View>
+                    )}
+                    renderFixedHeader={() => (
+                        <View key="fixed-header" style={part.iconInDrawerNav}>
+                            <Left style={Platform.OS === 'ios' ? {marginTop: 20} : ''}>
+                                <BackButton goBack={goBack}/>
+                            </Left>
+                        </View>
+                    )}
+                >
+                    {
+                        isLoading
+                            ?
+                            <View style={part.wrapperIsLoading}>
+                                <Spinner color={color.gray}/>
+                            </View>
+                            :
+                            <View style={{flex: 1}}>
+                                <Content>
                                     <View>
-                                        <Item style={[part.noBorder, {paddingLeft: 15}]}>
-                                            <Text style={[part.titleLargeDarkBold]}>
-                                                MUA SÁCH
-                                            </Text>
-                                        </Item>
-                                    </View>
-                                </View>
-                            )}
-                            renderStickyHeader={() => (
-                                <View key="sticky-header" style={parallaxStyle.stickySection}>
-                                    <View style={part.iconInDrawerNav}>
-                                        <Left style={Platform.OS === 'ios' ? {marginTop: 20} : ''}>
-                                            <Body style={{padding: 30}}>
-                                            <Text style={[part.titleSmallDarkBold, {fontSize: 15}]} numberOfLines={1}>
-                                                MUA SÁCH
-                                            </Text>
-                                            </Body>
-                                        </Left>
-                                    </View>
-                                </View>
-                            )}
-                            renderFixedHeader={() => (
-                                <View key="fixed-header" style={part.iconInDrawerNav}>
-                                    <Left style={Platform.OS === 'ios' ? {marginTop: 20} : ''}>
-                                        <BackButton goBack={goBack}/>
-                                    </Left>
-                                </View>
-                            )}
-                        >
-                            <Content>
-                                <View>
-                                    <FlatList
-                                        showsVerticalScrollIndicator={false}
-                                        data={books}
-                                        renderItem={({item}) =>
-                                            <View style={{marginTop: 50}}>
-                                                <View style={[part.wrapperItemBook, part.haveBorderBottom]}>
-                                                    <View style={part.wrapperTextInItemBook}>
-                                                        <Text style={part.textTitlePost}>{item.name}</Text>
-                                                        <Text
-                                                            style={part.textDescription}>{item.short_description}</Text>
-                                                        <Text style={[part.textNormalDark, part.paddingLine8]}>Vui lòng
-                                                            hoàn
-                                                            thành các thông tin bên dưới chúng tôi sẽ sớm liên hệ lai
-                                                            với
-                                                            bạn.</Text>
-                                                        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                                        <FlatList
+                                            showsVerticalScrollIndicator={false}
+                                            data={books}
+                                            renderItem={({item}) =>
+                                                <View style={{marginTop: 50}}>
+                                                    <View style={[part.wrapperItemBook, part.haveBorderBottom]}>
+                                                        <View style={part.wrapperTextInItemBook}>
+                                                            <Text style={part.textTitlePost}>{item.name}</Text>
                                                             <Text
-                                                                style={[part.textPrice, part.marginRight]}>{item.price}đ</Text>
+                                                                style={part.textDescription}>{item.short_description}</Text>
                                                             <Text
-                                                                style={[part.textPrice2, part.marginRight]}>{item.price * 0.8}đ</Text>
-                                                            <Text style={part.textCategoryInBook}
-                                                                  numberOfLines={1}>-20%</Text>
+                                                                style={[part.textNormalDark, part.paddingLine8]}>
+                                                                Vui lòng hoàn thành các thông tin bên dưới chúng tôi sẽ
+                                                                sớm liên hệ lai với bạn.</Text>
+                                                            <View style={{
+                                                                flexDirection: 'row',
+                                                                alignItems: 'center'
+                                                            }}>
+                                                                <Text
+                                                                    style={[part.textPrice, part.marginRight]}>{item.price}đ</Text>
+                                                                <Text
+                                                                    style={[part.textPrice2, part.marginRight]}>{item.price * 0.8}đ</Text>
+                                                                <Text style={part.textCategoryInBook}
+                                                                      numberOfLines={1}>-20%</Text>
+                                                            </View>
                                                         </View>
                                                     </View>
-                                                </View>
-                                                <View style={part.wrapperImageInItemBook}>
-                                                    <Image
-                                                        resizeMode={'cover'}
-                                                        style={part.imageInItemBook}
-                                                        source={{uri: item.avatar}}
-                                                    />
-                                                </View>
-                                                <View style={part.wrapperBuyBook}>
-                                                    <TouchableOpacity
-                                                        onPress={() => navigate('DetailBook', {
-                                                            id: item.id,
-                                                            priceItemBook: priceItemBook,
-                                                            priceTotal: this.state.priceTotal,
-                                                            numberBooks: numberBooks,
-                                                            priceBooks: this.state.priceBooks,
-                                                            books: this.state.books,
-                                                            productInStore: this.state.productInStore,
-                                                            key: item.key,
-                                                        })}
-                                                    >
-                                                        <Text style={part.textBigBlue}>Xem thêm</Text>
-                                                    </TouchableOpacity>
-                                                    <TouchableOpacity
-                                                        style={part.buttonBuyNow}
-                                                        onPress={() => {
-                                                            this.buyBookStep1(item.key)
-                                                        }}
-                                                    >
-                                                        <Text style={[part.paddingRight, part.textBigLight]}>Đặt mua
-                                                            ngay</Text>
-                                                        <Icon name="feat|arrow-right"
-                                                              size={size.iconBig}
-                                                              color={color.navTitle}
+                                                    <View style={part.wrapperImageInItemBook}>
+                                                        <Image
+                                                            resizeMode={'cover'}
+                                                            style={part.imageInItemBook}
+                                                            source={{uri: item.avatar}}
                                                         />
-                                                    </TouchableOpacity>
-                                                </View>
-                                            </View>
-                                        }/>
-                                </View>
-                            </Content>
-                            <Modal
-                                presentationStyle="overFullScreen"
-                                animationType="fade"
-                                transparent={true}
-                                visible={this.state.modalCart}
-                            >
-                                <View
-                                    style={part.wrapperModal}
-                                    {...this.panResponder.panHandlers}
-                                >
-                                    <View style={part.modalCart}>
-                                        <View style={[part.topModal, part.haveBorderBottom]}>
-                                            <Text style={part.titleBigDarkBold}>
-                                                GIỎ HÀNG
-                                            </Text>
-                                        </View>
-                                        <View style={part.contentModal}>
-                                            <FlatList
-                                                showsVerticalScrollIndicator={false}
-                                                data={this.state.productInStore}
-                                                extraData={this.state}
-                                                renderItem={({item}) =>
-                                                    <TouchableOpacity
-                                                        activeOpacity={1}
-                                                        style={[{marginTop: 10}]}>
-                                                        <View
-                                                            style={[part.wrapperItemBookModal, part.haveBorderBottom]}>
-                                                            <View style={part.wrapperImageInModal}>
-                                                                <Image
-                                                                    resizeMode={'cover'}
-                                                                    style={part.imageInCard}
-                                                                    source={{uri: item.avatar}}
-                                                                />
-                                                            </View>
-                                                            <View style={part.wrapperTextInItemBookModal}>
-                                                                <Text style={part.textTitlePost}>{item.name}</Text>
-                                                                <Text
-                                                                    style={part.textDescription}>{item.short_description}</Text>
-
-                                                                <View style={{
-                                                                    flexDirection: 'row',
-                                                                    alignItems: 'center'
-                                                                }}>
-                                                                    <Text
-                                                                        style={[part.textPrice, part.marginRight]}>{item.price}</Text>
-                                                                    <Text
-                                                                        style={[part.textPrice2, part.marginRight]}>{item.price * 0.8}đ</Text>
-                                                                    <Text style={part.textCategoryInBook}
-                                                                          numberOfLines={1}>-20%</Text>
-                                                                </View>
-                                                                <View style={[part.paddingTRB,{
-                                                                    flexDirection: 'row',
-                                                                    alignItems: 'center',
-                                                                }]}>
-                                                                    <Text
-                                                                        style={[part.textPrice2, part.marginRight]}>
-                                                                        {numberBooks[item.key]} cuốn</Text>
-                                                                    <Icon name="fontawesome|plus-circle"
-                                                                          size={size.iconBig}
-                                                                          color={color.titleBlue}
-                                                                          onPress={() => {
-                                                                              this.plusBooks(item.key)
-                                                                          }}
-                                                                    />
-                                                                    <Icon name="fontawesome|minus-circle"
-                                                                          size={size.iconBig}
-                                                                          color={color.titleBlue}
-                                                                          style={{marginLeft: 5}}
-                                                                          onPress={() => {
-                                                                              this.minusBooks(item.key)
-                                                                          }}
-                                                                    />
-                                                                </View>
-                                                                <View style={part.paddingTRB}>
-                                                                    <Text
-                                                                        style={part.textPrice2}>{priceItemBook[item.key]}
-                                                                        đ</Text>
-                                                                </View>
-                                                            </View>
-                                                        </View>
-                                                    </TouchableOpacity>
-                                                }/>
-                                        </View>
-                                        <View style={[part.bottomModal, part.haveBorderTop, {
-                                            height: 30,
-                                            flexDirection: 'row'
-                                        }]}>
-                                            <Left>
-                                                <Text style={[part.textPrice2, {marginLeft: 10}]}>Tổng</Text>
-                                            </Left>
-                                            <Right>
-                                                <Text
-                                                    style={[part.textPrice2, {marginRight: 10}]}>{this.state.priceTotal}
-                                                    đ</Text>
-                                            </Right>
-                                        </View>
-                                        <View style={[part.bottomModal, part.haveBorderTop]}>
-                                            <Left style={{flexDirection: 'row'}}>
-                                                <Left/>
-                                                <Body>
-                                                <TouchableOpacity
-                                                    onPress={() => this.buyBookDone()}
-                                                >
-                                                    <Text style={part.textBigBlue}>Mua tiếp</Text>
-                                                </TouchableOpacity>
-                                                </Body>
-                                                <Right>
-                                                    <TouchableOpacity
-                                                        style={part.buttonOrderInModal}
-                                                        onPress={
-                                                            isLoading
-                                                                ?
-                                                                () => {
-                                                                }
-                                                                :
-                                                                () => this.buyBookStep2()
-                                                        }
-                                                    >
-                                                        <Text style={part.textBigLight}>Đặt hàng</Text>
-                                                    </TouchableOpacity>
-                                                </Right>
-                                            </Left>
-                                        </View>
-                                    </View>
-                                </View>
-                            </Modal>
-                            <Modal
-                                presentationStyle="overFullScreen"
-                                animationType="fade"
-                                transparent={true}
-                                visible={this.state.modalInfoCart}
-                            >
-                                <View
-                                    style={part.wrapperModal}
-                                    {...this.panResponder.panHandlers}
-                                >
-                                    <View style={part.modalCart}>
-                                        <View style={[part.topModal, part.haveBorderBottom]}>
-                                            <Text style={part.titleBigDarkBold}>
-                                                THÔNG TIN ĐẶT HÀNG
-                                            </Text>
-                                        </View>
-                                        <Content style={part.contentModal}>
-                                            <View style={part.wrapperForm}>
-                                                <View style={part.wrapperTextInputInfoUser}>
-                                                    <Text style={[part.textBookName, {fontSize: size.titleSmall}]}>HỌ VÀ
-                                                        TÊN</Text>
-                                                </View>
-                                                <Item regular style={part.wrapperInputInfoUser}>
-                                                    <Input
-                                                        autoCorrect={false}
-                                                        placeholderTextColor={color.gray}
-                                                        style={part.inputInfoUser}
-                                                        placeholder='Họ và tên'
-                                                        onChangeText={(name) => {
-                                                            this.setState({name})
-                                                        }}
-                                                    />
-                                                </Item>
-                                                <View style={part.wrapperTextInputInfoUser}>
-                                                    <Text style={[part.textBookName, {fontSize: size.titleSmall}]}>SỐ
-                                                        ĐIỆN
-                                                        THOẠI</Text>
-                                                </View>
-                                                <Item regular style={part.wrapperInputInfoUser}>
-                                                    <Input
-                                                        autoCorrect={false}
-                                                        placeholderTextColor={color.gray}
-                                                        style={part.inputInfoUser}
-                                                        placeholder='Số điện thoại'
-                                                        onChangeText={(phone) => {
-                                                            this.setState({phone})
-                                                        }}
-                                                    />
-                                                </Item>
-                                                <View style={part.wrapperTextInputInfoUser}>
-                                                    <Text
-                                                        style={[part.textBookName, {fontSize: size.titleSmall}]}>EMAIL</Text>
-                                                </View>
-                                                <Item regular style={part.wrapperInputInfoUser}>
-                                                    <Input
-                                                        autoCorrect={false}
-                                                        placeholderTextColor={color.gray}
-                                                        style={part.inputInfoUser}
-                                                        placeholder='Email'
-                                                        onChangeText={(email) => {
-                                                            this.setState({email})
-                                                        }}
-                                                    />
-                                                </Item>
-                                                <View style={part.wrapperTextInputInfoUser}>
-                                                    <Text style={[part.textBookName, {fontSize: size.titleSmall}]}>ĐỊA
-                                                        CHỈ NHẬN
-                                                        SÁCH</Text>
-                                                </View>
-                                                <Item regular style={part.wrapperInputInfoUser}>
-                                                    <Input
-                                                        autoCorrect={false}
-                                                        placeholderTextColor={color.gray}
-                                                        style={part.inputInfoUser}
-                                                        placeholder='Địa chỉ nhận sách'
-                                                        onChangeText={(address) => {
-                                                            this.setState({address})
-                                                        }}
-                                                    />
-                                                </Item>
-                                                <View style={part.wrapperTextInputInfoUser}>
-                                                    <Text style={[part.textBookName, {fontSize: size.titleSmall}]}>PHƯƠNG
-                                                        THỨC
-                                                        THANH TOÁN</Text>
-                                                </View>
-                                                <View style={part.wrapperTextInputInfoUser}>
-                                                    <Item regular style={part.wrapperInputInfoUser}>
-                                                        <Form>
-                                                            <Picker
-                                                                iosHeader={"Chọn phương thức thanh toán"}
-                                                                itemStyle={[part.noBorder, part.noMarginLeft, {paddingLeft: 20}]}
-                                                                itemTextStyle={part.titleSmallDark}
-                                                                style={{width: size.wid * .7}}
-                                                                textStyle={part.titleSmallDark}
-                                                                headerStyle={part.titleSmallDark}
-                                                                selectedValue={this.state.payment}
-                                                                onValueChange={this.onValueChange.bind(this)}
-                                                                mode={'dropdown'}
-                                                            >
-                                                                <Item label="Chuyển khoản ngân hàng" value="0"/>
-                                                                <Item label="Thanh toán trực tiếp" value="1"/>
-                                                            </Picker>
-                                                        </Form>
-                                                    </Item>
-                                                </View>
-                                            </View>
-                                        </Content>
-                                        <View style={[part.bottomModal, part.haveBorderTop]}>
-                                            <Left style={{flexDirection: 'row'}}>
-                                                <Left/>
-                                                <Body>
-                                                <TouchableOpacity
-                                                    onPress={() => this.buyBookDone()}
-                                                >
-                                                    <Text style={part.textBigBlue}>Mua tiếp</Text>
-                                                </TouchableOpacity>
-                                                </Body>
-                                                <Right>
-                                                    <TouchableOpacity
-                                                        style={part.buttonOrderInModal}
-                                                        onPress={() => this.buyBookStep3()}
-                                                    >
-                                                        {(1 == 0) ? (
-                                                            <ActivityIndicator
-                                                                animated={true}
-                                                                color={color.navTitle}
-                                                                style={{
-                                                                    flex: 1,
-                                                                    justifyContent: 'center',
-                                                                    alignItems: 'center',
-                                                                    height: 15,
-                                                                }}
-                                                                size='small'
+                                                    </View>
+                                                    <View style={part.wrapperBuyBook}>
+                                                        <TouchableOpacity
+                                                            onPress={() => navigate('DetailBook', {
+                                                                id: item.id,
+                                                                priceItemBook: priceItemBook,
+                                                                priceTotal: this.state.priceTotal,
+                                                                numberBooks: numberBooks,
+                                                                priceBooks: this.state.priceBooks,
+                                                                books: this.state.books,
+                                                                productInStore: this.state.productInStore,
+                                                                key: item.key,
+                                                            })}
+                                                        >
+                                                            <Text style={part.textBigBlue}>Xem thêm</Text>
+                                                        </TouchableOpacity>
+                                                        <TouchableOpacity
+                                                            style={part.buttonBuyNow}
+                                                            onPress={
+                                                                item.key || item.key != undefined
+                                                                    ?
+                                                                    () => this.buyBookStep1(item.key)
+                                                                    :
+                                                                    () => {
+                                                                    }
+                                                            }
+                                                        >
+                                                            <Text
+                                                                style={[part.paddingRight, part.textBigLight]}>Đặt
+                                                                mua
+                                                                ngay</Text>
+                                                            <Icon name="feat|arrow-right"
+                                                                  size={size.iconBig}
+                                                                  color={color.navTitle}
                                                             />
-                                                        ) : (
-                                                            <Text style={part.textBigLight}>Đặt hàng</Text>
-                                                        )}
-                                                    </TouchableOpacity>
-                                                </Right>
-                                            </Left>
-                                        </View>
-                                    </View>
-                                </View>
-                            </Modal>
-                            <Modal
-                                presentationStyle="overFullScreen"
-                                animationType="fade"
-                                transparent={true}
-                                visible={this.state.modalBuySuccess}
-                            >
-                                <View
-                                    style={part.wrapperModal}
-                                    {...this.panResponder.panHandlers}
-                                >
-                                    <View style={part.modalCartStatus}>
-                                        <View style={[part.topModal, part.haveBorderBottom]}>
-                                            <Text style={part.titleBigDarkBold}>
-                                                ĐẶT HÀNG THÀNH CÔNG
-                                            </Text>
-                                        </View>
-                                        <View style={part.contentModal}>
-                                            <View style={part.wrapperForm}>
-                                                <Icon
-                                                    name="material|done"
-                                                    color={color.green}
-                                                    size={80}
-                                                />
-                                                <View style={part.wrapperTextInputInfoUser}>
-                                                    <Text style={part.textPrice2}>
-                                                        Chúc mừng bạn đã đặt hàng thành công.
-                                                        Vui lòng check email để kiểm tra lại dơn hàng.
-                                                        Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất
-                                                    </Text>
+                                                        </TouchableOpacity>
+                                                    </View>
                                                 </View>
+                                            }/>
+                                    </View>
+                                </Content>
+                                <Modal
+                                    presentationStyle="overFullScreen"
+                                    animationType="fade"
+                                    transparent={true}
+                                    visible={this.state.modalCart}
+                                >
+                                    <View
+                                        style={part.wrapperModal}
+                                        {...this.panResponder.panHandlers}
+                                    >
+                                        <View style={part.modalCart}>
+                                            <View style={[part.topModal, part.haveBorderBottom]}>
+                                                <Text style={part.titleBigDarkBold}>
+                                                    GIỎ HÀNG
+                                                </Text>
                                             </View>
+                                            <View style={part.contentModal}>
+                                                <FlatList
+                                                    showsVerticalScrollIndicator={false}
+                                                    data={this.state.productInStore}
+                                                    extraData={this.state}
+                                                    renderItem={({item}) =>
+                                                        <TouchableOpacity
+                                                            activeOpacity={1}
+                                                            style={[{marginTop: 10}]}>
+                                                            <View
+                                                                style={[part.wrapperItemBookModal, part.haveBorderBottom]}>
+                                                                <View style={part.wrapperImageInModal}>
+                                                                    <Image
+                                                                        resizeMode={'cover'}
+                                                                        style={part.imageInCard}
+                                                                        source={{uri: item.avatar}}
+                                                                    />
+                                                                </View>
+                                                                <View style={part.wrapperTextInItemBookModal}>
+                                                                    <Text
+                                                                        style={part.textTitlePost}>{item.name}</Text>
+                                                                    <Text
+                                                                        style={part.textDescription}>{item.short_description}</Text>
 
-                                        </View>
-                                        <View style={[part.bottomModal, part.haveBorderTop]}>
-                                            <Body>
-                                            <TouchableOpacity style={part.buttonOrderInModal}
-                                                              onPress={() => this.buyBookDone()}
-                                            >
-                                                <Text style={part.textBigLight}>Xác nhận</Text>
-                                            </TouchableOpacity>
-                                            </Body>
+                                                                    <View style={{
+                                                                        flexDirection: 'row',
+                                                                        alignItems: 'center'
+                                                                    }}>
+                                                                        <Text
+                                                                            style={[part.textPrice, part.marginRight]}>{item.price}</Text>
+                                                                        <Text
+                                                                            style={[part.textPrice2, part.marginRight]}>{item.price * 0.8}đ</Text>
+                                                                        <Text style={part.textCategoryInBook}
+                                                                              numberOfLines={1}>-20%</Text>
+                                                                    </View>
+                                                                    <View style={[part.paddingTRB, {
+                                                                        flexDirection: 'row',
+                                                                        alignItems: 'center',
+                                                                    }]}>
+                                                                        <Text
+                                                                            style={[part.textPrice2, part.marginRight]}>
+                                                                            {numberBooks[item.key]} cuốn</Text>
+                                                                        <Icon name="fontawesome|plus-circle"
+                                                                              size={size.iconBig}
+                                                                              color={color.titleBlue}
+                                                                              onPress={() => {
+                                                                                  this.plusBooks(item.key)
+                                                                              }}
+                                                                        />
+                                                                        <Icon name="fontawesome|minus-circle"
+                                                                              size={size.iconBig}
+                                                                              color={color.titleBlue}
+                                                                              style={{marginLeft: 5}}
+                                                                              onPress={() => {
+                                                                                  this.minusBooks(item.key)
+                                                                              }}
+                                                                        />
+                                                                    </View>
+                                                                    <View style={part.paddingTRB}>
+                                                                        <Text
+                                                                            style={part.textPrice2}>{priceItemBook[item.key]}
+                                                                            đ</Text>
+                                                                    </View>
+                                                                </View>
+                                                            </View>
+                                                        </TouchableOpacity>
+                                                    }/>
+                                            </View>
+                                            <View style={[part.bottomModal, part.haveBorderTop, {
+                                                height: 30,
+                                                flexDirection: 'row'
+                                            }]}>
+                                                <Left>
+                                                    <Text
+                                                        style={[part.textPrice2, {marginLeft: 10}]}>Tổng</Text>
+                                                </Left>
+                                                <Right>
+                                                    <Text
+                                                        style={[part.textPrice2, {marginRight: 10}]}>{this.state.priceTotal}
+                                                        đ</Text>
+                                                </Right>
+                                            </View>
+                                            <View style={[part.bottomModal, part.haveBorderTop]}>
+                                                <Left style={{flexDirection: 'row'}}>
+                                                    <Left/>
+                                                    <Body>
+                                                    <TouchableOpacity
+                                                        onPress={() => this.buyBookDone()}
+                                                    >
+                                                        <Text style={part.textBigBlue}>Mua tiếp</Text>
+                                                    </TouchableOpacity>
+                                                    </Body>
+                                                    <Right>
+                                                        <TouchableOpacity
+                                                            style={part.buttonOrderInModal}
+                                                            onPress={
+                                                                isLoading
+                                                                    ?
+                                                                    () => {
+                                                                    }
+                                                                    :
+                                                                    () => this.buyBookStep2()
+                                                            }
+                                                        >
+                                                            <Text style={part.textBigLight}>Đặt hàng</Text>
+                                                        </TouchableOpacity>
+                                                    </Right>
+                                                </Left>
+                                            </View>
                                         </View>
                                     </View>
-                                </View>
-                            </Modal>
-                        </ParallaxScrollView>
-                }
+                                </Modal>
+                                <Modal
+                                    presentationStyle="overFullScreen"
+                                    animationType="fade"
+                                    transparent={true}
+                                    visible={this.state.modalInfoCart}
+                                >
+                                    <View
+                                        style={part.wrapperModal}
+                                        {...this.panResponder.panHandlers}
+                                    >
+                                        <View style={part.modalCart}>
+                                            <View style={[part.topModal, part.haveBorderBottom]}>
+                                                <Text style={part.titleBigDarkBold}>
+                                                    THÔNG TIN ĐẶT HÀNG
+                                                </Text>
+                                            </View>
+                                            <Content style={part.contentModal}>
+                                                <View style={part.wrapperForm}>
+                                                    <View style={part.wrapperTextInputInfoUser}>
+                                                        <Text
+                                                            style={[part.textBookName, {fontSize: size.titleSmall}]}>HỌ
+                                                            VÀ
+                                                            TÊN</Text>
+                                                    </View>
+                                                    <Item regular style={part.wrapperInputInfoUser}>
+                                                        <Input
+                                                            autoCorrect={false}
+                                                            placeholderTextColor={color.gray}
+                                                            style={part.inputInfoUser}
+                                                            placeholder='Họ và tên'
+                                                            onChangeText={(name) => {
+                                                                this.setState({name})
+                                                            }}
+                                                        />
+                                                    </Item>
+                                                    <View style={part.wrapperTextInputInfoUser}>
+                                                        <Text
+                                                            style={[part.textBookName, {fontSize: size.titleSmall}]}>SỐ
+                                                            ĐIỆN
+                                                            THOẠI</Text>
+                                                    </View>
+                                                    <Item regular style={part.wrapperInputInfoUser}>
+                                                        <Input
+                                                            autoCorrect={false}
+                                                            placeholderTextColor={color.gray}
+                                                            style={part.inputInfoUser}
+                                                            placeholder='Số điện thoại'
+                                                            onChangeText={(phone) => {
+                                                                this.setState({phone})
+                                                            }}
+                                                        />
+                                                    </Item>
+                                                    <View style={part.wrapperTextInputInfoUser}>
+                                                        <Text
+                                                            style={[part.textBookName, {fontSize: size.titleSmall}]}>EMAIL</Text>
+                                                    </View>
+                                                    <Item regular style={part.wrapperInputInfoUser}>
+                                                        <Input
+                                                            autoCorrect={false}
+                                                            placeholderTextColor={color.gray}
+                                                            style={part.inputInfoUser}
+                                                            placeholder='Email'
+                                                            onChangeText={(email) => {
+                                                                this.setState({email})
+                                                            }}
+                                                        />
+                                                    </Item>
+                                                    <View style={part.wrapperTextInputInfoUser}>
+                                                        <Text
+                                                            style={[part.textBookName, {fontSize: size.titleSmall}]}>ĐỊA
+                                                            CHỈ NHẬN
+                                                            SÁCH</Text>
+                                                    </View>
+                                                    <Item regular style={part.wrapperInputInfoUser}>
+                                                        <Input
+                                                            autoCorrect={false}
+                                                            placeholderTextColor={color.gray}
+                                                            style={part.inputInfoUser}
+                                                            placeholder='Địa chỉ nhận sách'
+                                                            onChangeText={(address) => {
+                                                                this.setState({address})
+                                                            }}
+                                                        />
+                                                    </Item>
+                                                    <View style={part.wrapperTextInputInfoUser}>
+                                                        <Text
+                                                            style={[part.textBookName, {fontSize: size.titleSmall}]}>PHƯƠNG
+                                                            THỨC
+                                                            THANH TOÁN</Text>
+                                                    </View>
+                                                    <View style={part.wrapperTextInputInfoUser}>
+                                                        <Item regular style={part.wrapperInputInfoUser}>
+                                                            <Form>
+                                                                <Picker
+                                                                    iosHeader={"Chọn phương thức thanh toán"}
+                                                                    itemStyle={[part.noBorder, part.noMarginLeft, {paddingLeft: 20}]}
+                                                                    itemTextStyle={part.titleSmallDark}
+                                                                    style={{width: size.wid * .7}}
+                                                                    textStyle={part.titleSmallDark}
+                                                                    headerStyle={part.titleSmallDark}
+                                                                    selectedValue={this.state.payment}
+                                                                    onValueChange={this.onValueChange.bind(this)}
+                                                                    mode={'dropdown'}
+                                                                >
+                                                                    <Item label="Chuyển khoản ngân hàng"
+                                                                          value="0"/>
+                                                                    <Item label="Thanh toán trực tiếp"
+                                                                          value="1"/>
+                                                                </Picker>
+                                                            </Form>
+                                                        </Item>
+                                                    </View>
+                                                </View>
+                                            </Content>
+                                            <View style={[part.bottomModal, part.haveBorderTop]}>
+                                                <Left style={{flexDirection: 'row'}}>
+                                                    <Left/>
+                                                    <Body>
+                                                    <TouchableOpacity
+                                                        onPress={() => this.buyBookDone()}
+                                                    >
+                                                        <Text style={part.textBigBlue}>Mua tiếp</Text>
+                                                    </TouchableOpacity>
+                                                    </Body>
+                                                    <Right>
+                                                        <TouchableOpacity
+                                                            style={part.buttonOrderInModal}
+                                                            onPress={() => this.buyBookStep3()}
+                                                        >
+                                                            {(1 == 0) ? (
+                                                                <ActivityIndicator
+                                                                    animated={true}
+                                                                    color={color.navTitle}
+                                                                    style={{
+                                                                        flex: 1,
+                                                                        justifyContent: 'center',
+                                                                        alignItems: 'center',
+                                                                        height: 15,
+                                                                    }}
+                                                                    size='small'
+                                                                />
+                                                            ) : (
+                                                                <Text style={part.textBigLight}>Đặt hàng</Text>
+                                                            )}
+                                                        </TouchableOpacity>
+                                                    </Right>
+                                                </Left>
+                                            </View>
+                                        </View>
+                                    </View>
+                                </Modal>
+                                <Modal
+                                    presentationStyle="overFullScreen"
+                                    animationType="fade"
+                                    transparent={true}
+                                    visible={this.state.modalBuySuccess}
+                                >
+                                    <View
+                                        style={part.wrapperModal}
+                                        {...this.panResponder.panHandlers}
+                                    >
+                                        <View style={part.modalCartStatus}>
+                                            <View style={[part.topModal, part.haveBorderBottom]}>
+                                                <Text style={part.titleBigDarkBold}>
+                                                    ĐẶT HÀNG THÀNH CÔNG
+                                                </Text>
+                                            </View>
+                                            <View style={part.contentModal}>
+                                                <View style={part.wrapperForm}>
+                                                    <Icon
+                                                        name="material|done"
+                                                        color={color.green}
+                                                        size={80}
+                                                    />
+                                                    <View style={part.wrapperTextInputInfoUser}>
+                                                        <Text style={part.textPrice2}>
+                                                            Chúc mừng bạn đã đặt hàng thành công.
+                                                            Vui lòng check email để kiểm tra lại dơn hàng.
+                                                            Chúng tôi sẽ liên hệ với bạn trong thời gian sớm
+                                                            nhất
+                                                        </Text>
+                                                    </View>
+                                                </View>
+
+                                            </View>
+                                            <View style={[part.bottomModal, part.haveBorderTop]}>
+                                                <Body>
+                                                <TouchableOpacity style={part.buttonOrderInModal}
+                                                                  onPress={() => this.buyBookDone()}
+                                                >
+                                                    <Text style={part.textBigLight}>Xác nhận</Text>
+                                                </TouchableOpacity>
+                                                </Body>
+                                            </View>
+                                        </View>
+                                    </View>
+                                </Modal>
+                            </View>
+                    }
+                </ParallaxScrollView>
             </Container>
         );
     }

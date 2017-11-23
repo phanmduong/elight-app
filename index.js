@@ -90,7 +90,6 @@ export default class Elight extends Component {
                                 animationType={"spring"}
                                 width= {150}
                                 height={6}
-
                             />
                             <Text style={{fontSize: 20, marginTop: 20}}>{this.checkUpdate()}</Text>
                         </View>

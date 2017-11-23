@@ -4,7 +4,7 @@ import {
 
 } from 'react-native';
 import {
-    Container, Item, Left, Right, Spinner, Content
+    Container, Item, Left, Right, Spinner, Content, Body
 } from 'native-base';
 import part from '../../styles/partStyle';
 import Icon from '../../commons/Icon';
@@ -45,13 +45,12 @@ class HomeContainer extends Component {
     //     this.setState({animatePress: animatePress, blogs: blogs});
     // }
 
-    getMoreListBlog(){
-        if(this.props.blogs.length % 10 == 0){
+    getMoreListBlog() {
+        if (this.props.blogs.length % 10 == 0) {
             this.setState({page: this.state.page + 1});
             this.props.listBlogAction.getMoreListBlog(this.state.page);
         }
     }
-
 
 
     animateIn(i) {
@@ -72,15 +71,18 @@ class HomeContainer extends Component {
         this.setState({animatePress: animatePress});
     }
 
-    loadMore(){
-        if(this.props.isLoadingMore){
+    loadMore() {
+        if (this.props.isLoadingMore) {
             return (
-                <View style={[part.wrapperContainer, {height : 30}]}>
+                <View style={[part.wrapperContainer, {height: 30}]}>
                     <Spinner color={color.gray}/>
                 </View>
             )
-        }else {return(<View/>)}
+        } else {
+            return (<View/>)
+        }
     }
+
     render() {
         const {navigate} = this.props.navigation;
         const {isLoading, blogs, isRefreshing} = this.props;
@@ -88,7 +90,7 @@ class HomeContainer extends Component {
             <Container style={[part.wrapperContainer, {paddingBottom: 0}]}>
                 <StatusBar
                     backgroundColor={color.bgModal}
-                    barStyle={ Platform.OS === 'ios' ? "light-content" : "light-content"}
+                    barStyle={Platform.OS === 'ios' ? "light-content" : "light-content"}
                 />
                 {
                     Platform.OS === 'ios'
@@ -99,10 +101,26 @@ class HomeContainer extends Component {
                         <View/>
                 }
                 <View>
-                    <View style={[part.noBorder, {flexDirection:'row' ,paddingLeft: 15, backgroundColor: color.logoColor}]}>
+                    <View style={[part.noBorder, {flexDirection: 'row', backgroundColor: color.logoColor}]}>
+                        <Left>
+                            <TouchableOpacity
+                                activeOpacity={0.9}
+                            >
+                                <Icon
+                                    name="materialCommunity|bell"
+                                    color={color.navTitle}
+                                    size={25}
+                                    style={part.padding}
+                                />
+                            </TouchableOpacity>
+                        </Left>
+
+                        <Body>
                         <Text style={[part.textLogo, part.paddingLineFar]}>
                             eLight
                         </Text>
+                        </Body>
+
                         <Right style={part.paddingRight}>
                             <TouchableOpacity
                                 activeOpacity={0.9}
@@ -117,11 +135,11 @@ class HomeContainer extends Component {
                         </Right>
                     </View>
                 </View>
-                <View style={{ height: size.hei - 70}}>
+                <View style={{height: size.hei - 80}}>
                     {
                         isLoading
                             ?
-                            <View style={[part.wrapperContainer, {height : 80}]}>
+                            <View style={part.wrapperIsLoading}>
                                 <Spinner color={color.gray}/>
                             </View>
                             :
@@ -144,7 +162,7 @@ class HomeContainer extends Component {
                                         }
 
                                         renderItem={({item}) =>
-                                            <View style={[part.wrapperPost, {marginTop: 10, marginBottom: 10}]}>
+                                            <View style={[part.wrapperPost, {marginTop: 20}]}>
                                                 <TouchableOpacity
                                                     activeOpacity={0.8}
                                                     style={part.imagePost}
@@ -176,8 +194,10 @@ class HomeContainer extends Component {
                                                         {
                                                             item.category
                                                                 ?
-                                                                <View style={[part.noBorder, part.wrapperTextCategoryInImage]}>
-                                                                    <Text style={part.textCategoryInImage} numberOfLines={1}>
+                                                                <View
+                                                                    style={[part.noBorder, part.wrapperTextCategoryInImage]}>
+                                                                    <Text style={part.textCategoryInImage}
+                                                                          numberOfLines={1}>
                                                                         {item.category ? item.category.toUpperCase() : 'BLOG'}
                                                                     </Text>
                                                                 </View>
@@ -202,7 +222,7 @@ class HomeContainer extends Component {
                                                 </View>
                                             </View>
                                         }
-                                        ListFooterComponent = {this.loadMore()}
+                                        ListFooterComponent={this.loadMore()}
                                     />
                                 </View>
 

@@ -80,7 +80,6 @@ class CurriculumInformationContainer extends Component {
             })
         }
     }
-
     onEnd(){
         this.setState({
             minute: 0,
@@ -192,7 +191,7 @@ class CurriculumInformationContainer extends Component {
                             {
                                 isLoadingCurriculum
                                     ?
-                                    <View style={[part.wrapperContainer, {height : 80}]}>
+                                    <View style={part.wrapperIsLoading}>
                                         <Spinner color={color.gray}/>
                                     </View>
                                     :

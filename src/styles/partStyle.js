@@ -5,7 +5,6 @@ import {hei, wid} from './size';
 
 const part = StyleSheet.create({
     // NAV BAR
-
     itemTabInDrawer: {
         alignItems: 'center',
         flexDirection: 'row',
@@ -14,9 +13,6 @@ const part = StyleSheet.create({
         borderBottomWidth: 0,
     },
 
-    header: {
-        backgroundColor: color.backGround
-    },
     //WRAPPER
     wrapperContainer: {
         padding: 0,
@@ -29,7 +25,6 @@ const part = StyleSheet.create({
         padding: 0,
         backgroundColor: color.none,
     },
-    wrapperCenter: {},
     wrapperBuyNowButton: {
         width: wid,
         height: 60,
@@ -77,17 +72,6 @@ const part = StyleSheet.create({
         marginLeft: 130,
         width: wid - 40 - (wid / 3 - 30) - 40,
     },
-    wrapperImageInItemBookModal: {
-        marginLeft: 20,
-        width: 100,
-        height: 130,
-        position: 'absolute',
-    },
-    imageInItemBookModal: {
-        flex: 1,
-        width: 100,
-        height: 130,
-    },
     wrapperItemBook: {
         marginTop: 20,
         width: wid,
@@ -100,13 +84,7 @@ const part = StyleSheet.create({
         width: wid,
         height: hei / 3,
     },
-    wrapperContentImage: {
-        flex: 1,
-        marginTop: 20,
-        width: wid,
-        height: hei / 3,
-        backgroundColor: 'red'
-    },
+
     wrapperBuyBook: {
         width: wid,
         padding: 20,
@@ -121,18 +99,14 @@ const part = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    wrapperItem: {
-        marginTop: 20,
-        width: wid,
-        height: hei / 3,
-    },
+
     wrapperTextInItemBook: {
         marginLeft: 160,
         width: wid - 160,
     },
     wrapperImageInItemBook: {
         marginLeft: 20,
-        width: size.wid / 3 ,
+        width: size.wid / 3,
         height: size.wid * 1.5 / 3,
         position: 'absolute',
 
@@ -161,7 +135,7 @@ const part = StyleSheet.create({
     },
     imageInItemBook: {
         flex: 1,
-        width: size.wid / 3 ,
+        width: size.wid / 3,
         height: size.wid * 1.5 / 3,
     },
     imageInCard: {
@@ -203,13 +177,6 @@ const part = StyleSheet.create({
         position: 'absolute',
     },
 
-    borderNone: {
-        borderBottomWidth: 0,
-        borderTopWidth: 0,
-    },
-
-    // FORM
-
 
     avatarUserNormal: {
         width: 70,
@@ -226,14 +193,6 @@ const part = StyleSheet.create({
         borderRadius: 15 / 2,
     },
 
-
-    image: {
-        height: size.hei * 0.6,
-        width: wid,
-        flex: 1,
-        position: 'relative',
-        backgroundColor: color.backGround,
-    },
     imagePost: {
         height: hei / 3,
         width: wid - 40,
@@ -298,21 +257,7 @@ const part = StyleSheet.create({
         color: '#42d9f4',
         fontWeight: Platform.OS === 'ios' ? '600' : 'normal',
     },
-    infoTitle: {
-        marginTop: 20,
-        fontFamily: (Platform.OS === 'ios') ? 'Montserrat' : 'Montserrat-Medium',
-        fontSize: size.titleSmall,
-        color: color.text,
-        fontWeight: 'normal',
-        marginRight: 16,
-    },
-    titleSmallDarkBoldHaveButtonBackInHeader: {
-        fontFamily: (Platform.OS === 'ios') ? 'Montserrat' : 'Montserrat-Medium',
-        fontSize: size.titleSmall,
-        color: color.text,
-        fontWeight: Platform.OS === 'ios' ? '600' : 'normal',
-        marginLeft: -50,
-    },
+
     titleDarkBold: {
         fontFamily: (Platform.OS === 'ios') ? 'Montserrat' : 'Montserrat-Bold',
         fontSize: size.title,
@@ -403,7 +348,7 @@ const part = StyleSheet.create({
         paddingBottom: 0,
     },
 
-    noMargin:{
+    noMargin: {
         marginTop: 0,
         marginBottom: 0,
         marginRight: 0,
@@ -762,8 +707,8 @@ const part = StyleSheet.create({
         width: wid * 0.7,
         margin: 5,
         height: 30
-    }
-    , wrapperTextInputInfoUser: {
+    },
+    wrapperTextInputInfoUser: {
         width: wid * 0.7,
         margin: 5,
     },

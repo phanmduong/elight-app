@@ -276,7 +276,7 @@ class DetailBookContainer extends Component {
                         {
                             isLoadingBook
                                 ?
-                                <View style={[part.wrapperContainer, {height: 80}]}>
+                                <View style={part.wrapperIsLoading}>
                                     <Spinner color={color.gray}/>
                                 </View>
                                 :

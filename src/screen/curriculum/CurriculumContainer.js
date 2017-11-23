@@ -31,7 +31,6 @@ class CurriculumContainer extends Component {
                     backgroundColor={color.bgModal}
                     barStyle={Platform.OS === 'ios' ? "dark-content" : "light-content"}
                 />
-
                 <ParallaxScrollView
                     backgroundColor={color.backGround}
                     showsVerticalScrollIndicator={false}
@@ -86,16 +85,8 @@ class CurriculumContainer extends Component {
                     {
                         isLoading
                             ?
-                            <View
-                                style={{
-                                    marginTop: 20,
-                                    flex: 1,
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                }}
-                            >
-                                <Spinner
-                                    color={color.gray}/>
+                            <View style={part.wrapperIsLoading}>
+                                <Spinner color={color.gray}/>
                             </View>
                             :
                             <FlatList
