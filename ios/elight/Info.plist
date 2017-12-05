@@ -21,7 +21,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>6</string>
+	<string>7</string>
 	<key>CodePushDeploymentKey</key>
 	<string>pa4nkFHgWcU-H3YF5uAh4aCH7Daj91a6f11c-8611-4707-bff5-9033ff68ea8f</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -76,10 +76,6 @@
 		<string>rubicon-icon-font.ttf</string>
 		<string>Feather.ttf</string>
 		<string>MaterialCommunityIcons.ttf</string>
-	</array>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>audio</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
