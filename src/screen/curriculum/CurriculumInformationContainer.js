@@ -17,13 +17,13 @@ import * as size from '../../styles/size';
 import * as curriculumAction from './curriculumAction';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import Video from 'react-native-video';
-
+import MusicControl from 'react-native-music-control';
 class CurriculumInformationContainer extends Component {
     constructor() {
         super();
         this.state = {
             play: 1,
-            paused: false,
+            paused: true,
             duration: 0.0,
             currentTime: 0.0,
             minute: 0,
@@ -36,6 +36,8 @@ class CurriculumInformationContainer extends Component {
         this.onProgress = this.onProgress.bind(this);
         this.onEnd = this.onEnd.bind(this);
         this.progressPress = this.progressPress.bind(this);
+        this.playTheSong = this.playTheSong.bind(this);
+        this.pauseTheSong = this.pauseTheSong.bind(this);
     }
 
     componentWillMount() {
@@ -43,13 +45,48 @@ class CurriculumInformationContainer extends Component {
         this.props.curriculumAction.getCurriculum(params.id)
     }
 
-    playSound() {
-        if (this.state.paused === true) {
-            this.setState({paused: false});
-        } else {
-            this.setState({paused: true});
-        }
+    playTheSong() {
+        this.setState({paused: false})
+        MusicControl.updatePlayback({
+            state: MusicControl.STATE_PLAYING
+        });
+        MusicControl.setNowPlaying({
+            title: 'Billie Jean',
+            artwork: 'https://i.imgur.com/e1cpwdo.png', // URL or RN's image require()
+            artist: 'Michael Jackson',
+            album: 'Thriller',
+            genre: 'Post-disco, Rhythm and Blues, Funk, Dance-pop',
+            duration: this.state.duration, // (Seconds)
+            description: '', // Android Only
+            color: 0xFFFFFF, // Notification Color - Android Only
+            date: '1983-01-02T00:00:00Z', // Release Date (RFC 3339) - Android Only
+            rating: 84, // Android Only (Boolean or Number depending on the type)
+            notificationIcon: 'my_custom_icon' // Android Only (String), Android Drawable resource name for a custom notification icon
+        })
+        MusicControl.enableControl('play', true)
+        MusicControl.enableControl('pause', true)
+        MusicControl.enableControl('seekForward', true);
+        MusicControl.enableControl('seekBackward', true);
+        MusicControl.enableControl('skipForward', false);
+        MusicControl.enableControl('skipBackward', false);
+        MusicControl.enableBackgroundMode(true);
+
     }
+
+    pauseTheSong() {
+        this.setState({paused: true});
+        MusicControl.updatePlayback({
+            state: MusicControl.STATE_PAUSED
+        });
+        MusicControl.enableControl('play', true)
+        MusicControl.enableControl('pause', true)
+        MusicControl.enableControl('seekForward', false);
+        MusicControl.enableControl('seekBackward', false);
+        MusicControl.enableControl('skipForward', false);
+        MusicControl.enableControl('skipBackward', false);
+        MusicControl.enableBackgroundMode(true);
+    }
+
 
     onLoad(data) {
         this.setState({duration: data.duration});
@@ -80,16 +117,18 @@ class CurriculumInformationContainer extends Component {
             })
         }
     }
-    onEnd(){
+
+    onEnd() {
         this.setState({
             minute: 0,
             second: 0,
             paused: true
         })
     }
-    progressPress(e){
+
+    progressPress(e) {
         const position = e.nativeEvent.locationX
-        const progress = ((position)/(size.wid - 20)) * this.state.duration
+        const progress = ((position) / (size.wid - 20)) * this.state.duration
         this.player.seek(progress)
     }
 
@@ -227,7 +266,7 @@ class CurriculumInformationContainer extends Component {
                                 <TouchableOpacity
                                     activeOpacity={1}
                                     style={[part.padding, part.wrapperButtonPlay]}
-                                    onPress={() => this.playSound()}
+                                    onPress={() => this.state.paused ? this.playTheSong() : this.pauseTheSong()}
                                 >
                                     <Icon name={iconPlay}
                                           size={25}
@@ -256,24 +295,24 @@ class CurriculumInformationContainer extends Component {
                                     muted={false}                           // Mutes the audio entirely.
                                     paused={paused}                          // Pauses playback entirely.
                                     repeat={true}                           // Repeat forever.
-                                    playInBackground={false}                // Audio continues to play when app entering background.
+                                    playInBackground={true}                // Audio continues to play when app entering background.
                                     playWhenInactive={false}                // [iOS] Video continues to play when control or notification center are shown.
                                     ignoreSilentSwitch={"ignore"}           // [iOS] ignore | obey - When 'ignore', audio will still play with the iOS hard silent switch set to silent. When 'obey', audio will toggle with the switch. When not specified, will inherit audio settings as usual.
                                     progressUpdateInterval={250.0}          // [iOS] Interval to fire onProgress (default to ~250ms)
                                     onLoad={this.onLoad}    // Callback when video loads
                                     onProgress={this.onProgress}    // Callback every ~250ms with currentTime
                                     onEnd={this.onEnd}
-                                    style={{backgroundColor:color.none}}
+                                    style={{backgroundColor: color.none}}
                                 />
                             </View>
-                            <View style = {{marginTop : 10}}>
-                            <TouchableWithoutFeedback style={{paddingTop: 10}} onPress = {this.progressPress}>
-                                <View style={part.wrapperDeadline}>
-                                    <View
-                                        style={[part.deadlineProgress, {width: widthDeadlineProgress}]}>
+                            <View style={{marginTop: 10}}>
+                                <TouchableWithoutFeedback style={{paddingTop: 10}} onPress={this.progressPress}>
+                                    <View style={part.wrapperDeadline}>
+                                        <View
+                                            style={[part.deadlineProgress, {width: widthDeadlineProgress}]}>
+                                        </View>
                                     </View>
-                                </View>
-                            </TouchableWithoutFeedback>
+                                </TouchableWithoutFeedback>
                             </View>
                             <View style={[part.paddingTop, {
                                 width: size.wid - 20,
@@ -294,6 +333,14 @@ class CurriculumInformationContainer extends Component {
         );
 
     }
+
+    componentDidMount(){
+        MusicControl.enableBackgroundMode(true);
+
+
+        MusicControl.on('play', this.playTheSong)
+        MusicControl.on('pause', this.pauseTheSong)
+    }
 }
 
 
@@ -311,3 +358,4 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CurriculumInformationContainer)
+

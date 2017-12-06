@@ -38,12 +38,12 @@ class SlideViewComponent extends Component {
                     >
                         <Text style={part.titleDark}>Trang Web</Text>
                     </TouchableOpacity>
-                    {/*<TouchableOpacity*/}
-                        {/*style={[part.itemTabInDrawer, part.paddingLeft]}*/}
-                        {/*onPress={() => navigate('Curriculum')}*/}
-                    {/*>*/}
-                        {/*<Text style={part.titleDark}>Giáo trình</Text>*/}
-                    {/*</TouchableOpacity>*/}
+                    <TouchableOpacity
+                        style={[part.itemTabInDrawer, part.paddingLeft]}
+                        onPress={() => navigate('Curriculum')}
+                    >
+                        <Text style={part.titleDark}>Giáo trình</Text>
+                    </TouchableOpacity>
                     <TouchableOpacity
                         style={[part.itemTabInDrawer, part.paddingLeft]}
                         onPress={() => navigate('BuyBook')}

@@ -1,7 +1,7 @@
 package com.elightbook.keetool.app.elight;
 
 import com.facebook.react.ReactActivity;
-
+import com.tanguyantoine.react.MusicControl;
 public class MainActivity extends ReactActivity {
 
     /**
@@ -12,4 +12,11 @@ public class MainActivity extends ReactActivity {
     protected String getMainComponentName() {
         return "elight";
     }
+    @Override
+    protected List<ReactPackage> getPackages() {
+            return Arrays.<ReactPackage>asList(
+    +           new MusicControl(),
+                new MainReactPackage()
+            );
+        }
 }
