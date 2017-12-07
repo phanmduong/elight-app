@@ -175,19 +175,21 @@ class BuyBookContainer extends Component {
 
 
     plusBooks(index) {
+        let productsInStore = this.state.productInStore;
         let numberBooks = this.state.numberBooks;
         let priceBooks = this.state.priceBooks;
         let priceItemBook = this.state.priceItemBook;
         let priceTotal = 0;
         numberBooks[index]++;
         priceItemBook[index] = priceBooks[index] * numberBooks[index] * 0.8;
-        for (let i = 0; i < numberBooks.length; i++) {
-            priceTotal += priceBooks[i] * numberBooks[i] * 0.8;
+        for (let i = 0; i < productsInStore.length; i++) {
+            priceTotal += priceBooks[productsInStore[i].key] * numberBooks[productsInStore[i].key] * 0.8;
         }
         this.setState({numberBooks: numberBooks, priceTotal: priceTotal, priceItemBook: priceItemBook})
     }
 
     minusBooks(index) {
+        let productsInStore = this.state.productInStore;
         let numberBooks = this.state.numberBooks;
         let priceBooks = this.state.priceBooks;
         let priceItemBook = this.state.priceItemBook;
@@ -196,8 +198,8 @@ class BuyBookContainer extends Component {
             numberBooks[index]--;
             priceItemBook[index] = priceBooks[index] * numberBooks[index] * 0.8;
         }
-        for (let i = 0; i < numberBooks.length; i++) {
-            priceTotal += priceBooks[i] * numberBooks[i] * 0.8;
+        for (let i = 0; i < productsInStore.length; i++) {
+            priceTotal += priceBooks[productsInStore[i].key] * numberBooks[productsInStore[i].key] * 0.8;
         }
         this.setState({numberBooks: numberBooks, priceTotal: priceTotal, priceItemBook: priceItemBook});
     }

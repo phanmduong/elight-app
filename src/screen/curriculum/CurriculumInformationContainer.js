@@ -51,7 +51,7 @@ class CurriculumInformationContainer extends Component {
             state: MusicControl.STATE_PLAYING
         });
         MusicControl.setNowPlaying({
-            title: 'Billie Jean',
+            title: this.props.data.name,
             artwork: 'https://i.imgur.com/e1cpwdo.png', // URL or RN's image require()
             artist: 'Michael Jackson',
             album: 'Thriller',
@@ -67,8 +67,8 @@ class CurriculumInformationContainer extends Component {
         MusicControl.enableControl('pause', true)
         MusicControl.enableControl('seekForward', true);
         MusicControl.enableControl('seekBackward', true);
-        MusicControl.enableControl('skipForward', false);
-        MusicControl.enableControl('skipBackward', false);
+        MusicControl.enableControl('skipForward', true);
+        MusicControl.enableControl('skipBackward', true);
         MusicControl.enableBackgroundMode(true);
 
     }
@@ -80,10 +80,10 @@ class CurriculumInformationContainer extends Component {
         });
         MusicControl.enableControl('play', true)
         MusicControl.enableControl('pause', true)
-        MusicControl.enableControl('seekForward', false);
-        MusicControl.enableControl('seekBackward', false);
-        MusicControl.enableControl('skipForward', false);
-        MusicControl.enableControl('skipBackward', false);
+        MusicControl.enableControl('seekForward', true);
+        MusicControl.enableControl('seekBackward', true);
+        MusicControl.enableControl('skipForward', true);
+        MusicControl.enableControl('skipBackward', true);
         MusicControl.enableBackgroundMode(true);
     }
 
