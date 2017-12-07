@@ -119,24 +119,34 @@ class BuyBookContainer extends Component {
         this.setModalBuySuccess(false);
         let productsInStore = this.state.productInStore;
         let priceBooks = this.state.priceBooks;
+        let priceItemBook = this.state.priceItemBook;
         let books = this.state.books;
         let numberBooks = this.state.numberBooks;
         let priceTotal = 0;
         let products = [];
+        let arr = [];
+        let j = 0;
+        if(numberBooks[index] == 0) {numberBooks[index]+=1; priceItemBook[index] = priceBooks[index] * numberBooks[index] * 0.8 ;}
         if (productsInStore.length > 0) {
             products = productsInStore.filter((item) => {
                 return item.key == index
             })
+            while (j < productsInStore.length){
+                if(numberBooks[productsInStore[j].key] !==0){
+                    arr.push(productsInStore[j]);
+                }
+                j++;
+            }
         }
-        if (products.length == 0 || productsInStore.length == 0) {
-            productsInStore.push(books[index]);
+        if (products.length == 0 || arr.length == 0) {
+            arr.push(books[index]);
         }
         let i = 0;
-        while (i < productsInStore.length) {
-            priceTotal += priceBooks[i] * numberBooks[i] * 0.8;
+        while (i < arr.length) {
+            priceTotal += priceBooks[arr[i].key] * numberBooks[arr[i].key] * 0.8;
             i++;
         }
-        this.setState({productInStore: productsInStore, priceTotal: priceTotal, numberBooks: numberBooks});
+        this.setState({productInStore: arr, priceTotal: priceTotal, numberBooks: numberBooks, priceItemBook : priceItemBook});
     }
 
     buyBookStep2() {
@@ -156,11 +166,11 @@ class BuyBookContainer extends Component {
 
     buyBookStep3() {
         // let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-        // if (this.state.email == '' || this.state.phone == '' || this.state.address == '' || this.state.payment == '' || this.state.name == '') {
-        //     Alert.alert("Vui lòng nhập đủ thông tin", "Bạn cần nhập đầy đủ thông tin để chúng tôi có thể giao hàng chính xác nhất.");
+        // if (reg.test(this.state.email) == false) {
+        //     Alert.alert("Email không hợp lệ ")
         // }
-        // else if (reg.test(this.state.email) == false) {
-        //     Alert.alert("Vui lòng nhập Email hợp lệ", "Email không hợp lệ ")
+        // else if (this.state.email == '' || this.state.phone == '' || this.state.address == '' || this.state.payment == '' || this.state.name == '') {
+        //     Alert.alert("Bạn cần nhập đầy đủ thông tin để chúng tôi có thể giao hàng chính xác nhất");
         // }
         // else if (this.state.products == "[]") {
         //     Alert.alert("Bạn chưa đặt sản phẩm nào")
@@ -168,9 +178,10 @@ class BuyBookContainer extends Component {
         // else {
         //     this.props.bookAction.orderBook(this.state);
         // }
+        this.setModalBuySuccess(true);
         this.setModalCart(false);
         this.setModalInfoCard(false);
-        this.setModalBuySuccess(true);
+        this.setState({productInStore : []});
     }
 
 
