@@ -67,8 +67,10 @@ class CurriculumInformationContainer extends Component {
         MusicControl.enableControl('pause', true)
         MusicControl.enableControl('seekForward', true);
         MusicControl.enableControl('seekBackward', true);
-        MusicControl.enableControl('skipForward', true);
-        MusicControl.enableControl('skipBackward', true);
+        MusicControl.on('seekForward', ()=> {this.progressPress.bind(this)});
+        MusicControl.on('seekBackward', ()=> {this.progressPress.bind(this)});
+        MusicControl.enableControl('skipBackward', true, {interval: 15})
+        MusicControl.enableControl('skipForward', true, {interval: 30})
         MusicControl.enableBackgroundMode(true);
 
     }
@@ -82,8 +84,8 @@ class CurriculumInformationContainer extends Component {
         MusicControl.enableControl('pause', true)
         MusicControl.enableControl('seekForward', true);
         MusicControl.enableControl('seekBackward', true);
-        MusicControl.enableControl('skipForward', true);
-        MusicControl.enableControl('skipBackward', true);
+        MusicControl.enableControl('skipBackward', true, {interval: 15})
+        MusicControl.enableControl('skipForward', true, {interval: 30})
         MusicControl.enableBackgroundMode(true);
     }
 
@@ -130,6 +132,8 @@ class CurriculumInformationContainer extends Component {
         const position = e.nativeEvent.locationX
         const progress = ((position) / (size.wid - 20)) * this.state.duration
         this.player.seek(progress)
+        MusicControl.enableControl('seekForward', true);
+        MusicControl.enableControl('seekBackward', true)
     }
 
     render() {
@@ -336,8 +340,8 @@ class CurriculumInformationContainer extends Component {
 
     componentDidMount(){
         MusicControl.enableBackgroundMode(true);
-
-
+        MusicControl.on('seekForward', ()=> {this.progressPress.bind(this)});
+        MusicControl.on('seekBackward', ()=> {this.progressPress.bind(this)});
         MusicControl.on('play', this.playTheSong)
         MusicControl.on('pause', this.pauseTheSong)
     }
